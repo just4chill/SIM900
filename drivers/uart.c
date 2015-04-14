@@ -6,11 +6,6 @@
 #include <string.h>
 #include "FreeRTOS.h"
 
-#define OVF_SLOT 1
-
-#define TEMT 			(1 << 6) 
-#define PCLK_UART3_MASK (3 << 18)
-
 UART_FIFO uart0, uart1, uart2, uart3;
 
 void UART0_IRQHandler(void)
@@ -486,7 +481,7 @@ void uart_init(uint8_t port, uint32_t baudrate)
 	else if(port == 3)
 	{
 		// Turn on UART2 peripheral clock
-		LPC_SC->PCLKSEL1 &= ~(PCLK_UART3_MASK);
+		LPC_SC->PCLKSEL1 &= ~(3 << 18);
 		LPC_SC->PCLKSEL1 |=  (0 << 18);		// PCLK_periph = CCLK/4
 
 		// Set PINSEL0 so that P0.0 = TXD3, P0.1 = RXD3
@@ -577,4 +572,28 @@ void uart_putc(uint8_t port, char c)
 		LPC_UART3->THR = c;
 		while(!((LPC_UART3->LSR) & TEMT));		
 	}
+}
+
+void uart_puts(uint8_t port, char  * ptr, uint32_t len)
+{
+	if(port == 0)
+		for(uint8_t i = 0;i < len;uart_putc(0, ptr[i++]));
+	else if(port == 1)
+		for(uint8_t i = 0;i < len;uart_putc(1, ptr[i++]));
+	else if(port == 2)
+		for(uint8_t i = 0;i < len;uart_putc(2, ptr[i++]));	
+	else if(port == 3)
+		for(uint8_t i = 0;i < len;uart_putc(3, ptr[i++]));
+}
+
+void uart_print(uint8_t port, char  * ptr)
+{
+	if(port == 0)
+		for(;*ptr != NULL;uart_putc(0, *(ptr++)));
+	else if(port == 1)
+		for(;*ptr != NULL;uart_putc(1, *(ptr++)));
+	else if(port == 2)
+		for(;*ptr != NULL;uart_putc(2, *(ptr++)));	
+	else if(port == 3)
+		for(;*ptr != NULL;uart_putc(3, *(ptr++)));
 }

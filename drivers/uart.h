@@ -4,6 +4,8 @@
 
 #include <stdint.h>
 
+#define debug_out(ptr) uart_print(0, ptr)	
+
 #define IER_RBR		0x01
 #define IER_THRE	0x02
 #define IER_RLS		0x04
@@ -21,6 +23,7 @@
 #define LSR_TEMT	0x40
 #define LSR_RXFE	0x80
 #define BUFSIZE		0x40
+#define TEMT 		(1 << 6) 
 
 typedef struct
 {
@@ -41,5 +44,7 @@ extern void 	uart_init(uint8_t, uint32_t);
 extern void 	uart_init_fifo(uint8_t,uint32_t);
 extern char 	uart_getc(uint8_t);
 extern void		uart_putc(uint8_t, char);
+extern void 	uart_puts(uint8_t port, char  *, uint32_t);
+extern void 	uart_print(uint8_t port, char  *);
 
 #endif

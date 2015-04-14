@@ -1,23 +1,36 @@
 
 #include "config.h"
 #include "LPC17xx.h"
+#include "system_LPC17xx.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
+
 #include <stdint.h>
-#include "system_LPC17xx.h"
+#include <string.h>
+#include <stdlib.h>
+
 #include "uart.h"
 #include "gsm.h"
 #include "printf_stdarg.h"
-#include <string.h>
-#include <stdlib.h>
+
 
 void 		prvSetupHardware( void );
 static void taskA(void * pvParameters);
 static void taskB(void * pvParameters);
-
+static void taskC(void * pvParameters);
 
 static void taskA(void * pvParameters)
 {
+	xQueueHandle xQueue1;
+	xQueue1 = xQueueCreate(10, sizeof(char));
+	if(xQueue1 == 0)
+		debug_out("Queue1 create failed\r\n");
+	else
+		debug_out("Queue1 create success\r\n");
+
+
 	for(;;)
 	{
 		;
@@ -26,6 +39,28 @@ static void taskA(void * pvParameters)
 
 static void taskB(void * pvParameters)
 {
+	xQueueHandle xQueue2;
+	xQueue2 = xQueueCreate(10, sizeof(char));
+	if(xQueue2 == 0)
+		debug_out("Queue2 create failed\r\n");
+	else
+		debug_out("Queue2 create success\r\n");
+
+	for(;;)
+	{
+		;
+	}
+}
+
+static void taskC(void * pvParameters)
+{
+	xQueueHandle xQueue3;
+	xQueue3 = xQueueCreate(10, sizeof(char));
+	if(xQueue3 == 0)
+		debug_out("Queue3 create failed\r\n");
+	else
+		debug_out("Queue3 create success\r\n");
+
 	for(;;)
 	{
 		;
@@ -67,6 +102,13 @@ int main(void)
 			128,
 			NULL,
 			4,
+			NULL);
+
+	xTaskCreate(taskC,
+			(signed portCHAR *)"taskC",
+			128,
+			NULL,
+			5,
 			NULL);
 
 	/* Start the scheduler */
