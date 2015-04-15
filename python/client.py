@@ -16,7 +16,7 @@ del_header = """DELETE /weight/4 HTTP/1.1\r
 Host: lit-taiga-2854.herokuapp.com\r
 Accept: application/json\r\n\r\n"""
 
-put_header = """PUT /weight/5 HTTP/1.1\r
+put_header = """PUT /weight/7 HTTP/1.1\r
 Host: lit-taiga-2854.herokuapp.com\r
 Content-Type: application/json\r
 Content-Length: 16\r
@@ -59,6 +59,7 @@ def PUT():
 	print sock.recv(100000)
 
 if CONNECT():
+	# POST()
 	PUT()
 	sock.shutdown(1)
 	sock.close()
