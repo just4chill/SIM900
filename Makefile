@@ -36,8 +36,7 @@ OBJS = 	list.o \
 		main.o \
 		uart.o \
 		syscalls.o \
-		gsm.o \
-		printf_stdarg.o
+		gsm.o 
 
 all: $(OBJS)
 	$(CC)gcc $(LFLAGS) $(OBJS) -o $(OUTPUT)

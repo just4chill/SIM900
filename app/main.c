@@ -13,7 +13,7 @@
 
 #include "uart.h"
 #include "gsm.h"
-#include "printf_stdarg.h"
+//#include "printf_stdarg.h"
 
 
 void 		prvSetupHardware( void );
@@ -23,6 +23,8 @@ static void taskC(void * pvParameters);
 
 static void taskA(void * pvParameters)
 {
+	vTaskDelay(100);
+	debug_out("TaskA Started\r\n");
 	xQueueHandle xQueue1;
 	xQueue1 = xQueueCreate(10, sizeof(char));
 	if(xQueue1 == 0)
@@ -39,6 +41,8 @@ static void taskA(void * pvParameters)
 
 static void taskB(void * pvParameters)
 {
+	vTaskDelay(200);
+	debug_out("TaskB Started\r\n");
 	xQueueHandle xQueue2;
 	xQueue2 = xQueueCreate(10, sizeof(char));
 	if(xQueue2 == 0)
@@ -54,6 +58,8 @@ static void taskB(void * pvParameters)
 
 static void taskC(void * pvParameters)
 {
+	vTaskDelay(300);
+	debug_out("TaskC Started\r\n");
 	xQueueHandle xQueue3;
 	xQueue3 = xQueueCreate(10, sizeof(char));
 	if(xQueue3 == 0)
@@ -81,8 +87,8 @@ void prvSetupHardware( void )
 	// Init FIFOs
 	uart_init_fifo(_MODEM_PORT, MODEM_UART_FIFO_SIZE);	
 	uart_init_fifo(_DEBUG_PORT, DEBUG_UART_FIFO_SIZE);	
-
-	printf("System started\r\n");
+	debug_out("System started\r\n");
+	//printf("System started from printf\r\n");
 }
 
 int main(void)
