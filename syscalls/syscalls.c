@@ -1,12 +1,14 @@
 
 
-#include <errno.h>
-#include <sys/times.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include "uart.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "errno.h"
 
-caddr_t _sbrk(int incr) {
+FILE *stdin;
+FILE *stdout;
+FILE *stderr;
+
+int _sbrk(int incr) {
     return -1;
 }
 
@@ -79,4 +81,39 @@ int _wait(int *status) {
 
 int _write(int file, char *ptr, int len) {
     return -1;
+}
+
+/*
+ * _fopen
+ * Open a file. Minimal implementation:
+ */
+FILE *_fopen(const char *name, const char *_type) 
+{
+    return NULL;
+}
+
+/*
+ * _fclose
+ * Close a file. Minimal implementation:
+ */
+int _fclose(FILE *fp)
+{
+    return 0;
+}
+
+/*
+ * _malloc
+ * Allocate memory. Minimal implementation:
+ */
+void *_malloc(size_t nbytes) 
+{
+    return NULL;
+}
+
+/*
+ * _free
+ * Release memory. Minimal implementation:
+ */
+void _free(void *aptr) 
+{
 }

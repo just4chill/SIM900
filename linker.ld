@@ -90,4 +90,3 @@ SECTIONS
 ENTRY(_vectors)
 
 /*  Libraries to link against. */
-

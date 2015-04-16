@@ -11,7 +11,7 @@
 #define DELETE  4
 
 #define modem_out(ptr) uart_print(_MODEM_PORT, ptr)
-#define modem_readline(ptr) uart_readline(0, ptr)
+#define modem_readline(ptr) uart_readline(_MODEM_PORT, ptr)
 
 typedef struct 
 {
@@ -24,6 +24,7 @@ typedef struct
 	char * http_status;
 	char * buff;
 	char * line;
+	char * token[];
 }gsmObj;
 
 extern gsmObj gsm;
@@ -39,6 +40,17 @@ extern uint32_t gsm_read(	uint8_t,
 							char *, 
 							char *
 					);
+
+extern uint8_t gsm_tokenize(	char * ,
+								char ** ,
+								char ,
+								char ,
+								char ,
+								char
+				);
+
+extern void gsm_init_tokens(uint8_t,uint8_t);
+extern void gsm_free_tokens(uint8_t);
 
 extern void gsmMalloc(uint32_t, uint32_t);
 

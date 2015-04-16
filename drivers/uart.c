@@ -3,7 +3,7 @@
 #include "LPC17xx.h"
 #include "system_LPC17xx.h"
 #include <stdint.h>
-#include <string.h>
+#include "string.h"
 #include "FreeRTOS.h"
 
 UART_FIFO uart0, uart1, uart2, uart3;
@@ -606,29 +606,29 @@ uint32_t uart_readline(uint8_t port, char * line)
 		uint32_t i = 0;
 		if(port == 0)
 		{
-			while(c != '\r')
+			while(c != '\n')
 			{	
 				if(uart0.num_bytes > 0)
 				{
 					c = uart_getc(0);
 					line[i++] = c;
 				}
-				if(c == '\r')
-					break;
+				if(c == '\n')
+						break;
 			}
 			line[i] = '\0';
 		}
 
 		else if(port == 1)
 		{
-			while(c != '\r')
+			while(c != '\n')
 			{	
 				if(uart1.num_bytes > 0)
 				{
 					c = uart_getc(1);
 					line[i++] = c;
 				}
-				if(c == '\r')
+				if(c == '\n')
 					break;
 			}
 			line[i] = '\0';
@@ -636,14 +636,14 @@ uint32_t uart_readline(uint8_t port, char * line)
 
 		else if(port == 2)
 		{
-			while(c != '\r')
+			while(c != '\n')
 			{	
 				if(uart2.num_bytes > 0)
 				{
 					c = uart_getc(2);
 					line[i++] = c;
 				}
-				if(c == '\r')
+				if(c == '\n')
 					break;
 			}
 			line[i] = '\0';
@@ -651,14 +651,14 @@ uint32_t uart_readline(uint8_t port, char * line)
 
 		else if(port == 3)
 		{
-			while(c != '\r')
+			while(c != '\n')
 			{	
 				if(uart3.num_bytes > 0)
 				{
 					c = uart_getc(3);
 					line[i++] = c;
 				}
-				if(c == '\r')
+				if(c == '\n')
 					break;
 			}
 			line[i] = '\0';
