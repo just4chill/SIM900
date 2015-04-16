@@ -39,9 +39,6 @@ void uart3_echo(void)
 
 void uart0_print_line(void)
 {
-	// uart_readline(0, line);
-	// debug_out(line);
-	// debug_out("\r\n");
 	gsm_read(3, gsm.line, gsm.buff);
 	debug_out("\r\n");
 	debug_out(gsm.buff);
@@ -98,55 +95,55 @@ void prvSetupHardware( void )
 
 	gsmMalloc(GSM_RX_BUFFER_SIZE, GSM_LINE_BUFFER_SIZE);
 
-	// build_header(	HEAD,
-	// 				"google.com",
-	// 				"search",
-	// 				NULL,
-	// 				gsm.gsm_buff
-	// 				);
+	build_header(	HEAD,
+					"google.com",
+					"search",
+					NULL,
+					gsm.buff
+					);
 
-	// debug_out("HEAD HEADER\r\n");
-	// debug_out(gsm.gsm_buff);
+	debug_out("HEAD HEADER\r\n");
+	debug_out(gsm.buff);
 
-	// build_header(	GET,
-	// 				"google.com",
-	// 				"search",
-	// 				NULL,
-	// 				gsm.gsm_buff
-	// 				);
+	build_header(	GET,
+					"google.com",
+					"search",
+					NULL,
+					gsm.buff
+					);
 
-	// debug_out("GET HEADER\r\n");
-	// debug_out(gsm.gsm_buff);
+	debug_out("GET HEADER\r\n");
+	debug_out(gsm.buff);
 
-	// build_header(	POST,
-	// 				"google.com",
-	// 				"search",
-	// 				"{\"info\":\"1,200\"}",
-	// 				gsm.gsm_buff
-	// 				);
+	build_header(	POST,
+					"google.com",
+					"search",
+					"{\"info\":\"1,200\"}",
+					gsm.buff
+					);
 
-	// debug_out("POST HEADER\r\n");
-	// debug_out(gsm.gsm_buff);
+	debug_out("POST HEADER\r\n");
+	debug_out(gsm.buff);
 
-	// build_header(	PUT,
-	// 				"google.com",
-	// 				"search/1",
-	// 				"{\"info\":\"1,200\"}",
-	// 				gsm.gsm_buff
-	// 				);
+	build_header(	PUT,
+					"google.com",
+					"search/1",
+					"{\"info\":\"1,200\"}",
+					gsm.buff
+					);
 
-	// debug_out("PUT HEADER\r\n");
-	// debug_out(gsm.gsm_buff);
+	debug_out("PUT HEADER\r\n");
+	debug_out(gsm.buff);
 
-	// build_header(	DELETE,
-	// 				"google.com",
-	// 				"search/1",
-	// 				NULL,
-	// 				gsm.gsm_buff
-	// 				);
+	build_header(	DELETE,
+					"google.com",
+					"search/1",
+					NULL,
+					gsm.buff
+					);
 
-	// debug_out("DELETE HEADER\r\n");
-	// debug_out(gsm.gsm_buff);
+	debug_out("DELETE HEADER\r\n");
+	debug_out(gsm.buff);
 
 	//line = (char *) pvPortMalloc(64);
 }
