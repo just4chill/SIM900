@@ -484,6 +484,8 @@ void uart_init(uint8_t port, uint32_t baudrate)
 		LPC_SC->PCLKSEL1 &= ~(3 << 18);
 		LPC_SC->PCLKSEL1 |=  (0 << 18);		// PCLK_periph = CCLK/4
 
+		LPC_SC->PCONP |= (1 << 25);
+
 		// Set PINSEL0 so that P0.0 = TXD3, P0.1 = RXD3
 		LPC_PINCON->PINSEL0 &= ~0xf;
 		LPC_PINCON->PINSEL0 |= ((1 << 1) | (1 << 3));
@@ -546,7 +548,7 @@ void uart_init_fifo(uint8_t _port, uint32_t _size)
 	 	uart3.num_bytes = 0;
 	 	uart3.rx_not_empty = 0;
 	 	uart3.rx_fifo = (char *) pvPortMalloc(_size);	
-	 	uart3.fifo_size	= _size;	
+	 	uart3.fifo_size	= _size;
 	}
 }
 
@@ -589,11 +591,77 @@ void uart_puts(uint8_t port, char  * ptr, uint32_t len)
 void uart_print(uint8_t port, char  * ptr)
 {
 	if(port == 0)
-		for(;*ptr != NULL;uart_putc(0, *(ptr++)));
+		for(;*ptr != '\0';uart_putc(0, *(ptr++)));
 	else if(port == 1)
-		for(;*ptr != NULL;uart_putc(1, *(ptr++)));
+		for(;*ptr != '\0';uart_putc(1, *(ptr++)));
 	else if(port == 2)
-		for(;*ptr != NULL;uart_putc(2, *(ptr++)));	
+		for(;*ptr != '\0';uart_putc(2, *(ptr++)));	
 	else if(port == 3)
-		for(;*ptr != NULL;uart_putc(3, *(ptr++)));
+		for(;*ptr != '\0';uart_putc(3, *(ptr++)));
+}
+
+uint32_t uart_readline(uint8_t port, char * line)
+{
+		char c = '\0';
+		uint32_t i = 0;
+		if(port == 0)
+		{
+			while(c != '\r')
+			{	
+				if(uart0.num_bytes > 0)
+				{
+					c = uart_getc(0);
+					line[i++] = c;
+				}
+				if(c == '\r')
+					break;
+			}
+			line[i] = '\0';
+		}
+
+		else if(port == 1)
+		{
+			while(c != '\r')
+			{	
+				if(uart1.num_bytes > 0)
+				{
+					c = uart_getc(1);
+					line[i++] = c;
+				}
+				if(c == '\r')
+					break;
+			}
+			line[i] = '\0';
+		}
+
+		else if(port == 2)
+		{
+			while(c != '\r')
+			{	
+				if(uart2.num_bytes > 0)
+				{
+					c = uart_getc(2);
+					line[i++] = c;
+				}
+				if(c == '\r')
+					break;
+			}
+			line[i] = '\0';
+		}
+
+		else if(port == 3)
+		{
+			while(c != '\r')
+			{	
+				if(uart3.num_bytes > 0)
+				{
+					c = uart_getc(3);
+					line[i++] = c;
+				}
+				if(c == '\r')
+					break;
+			}
+			line[i] = '\0';
+		}
+		return i;
 }

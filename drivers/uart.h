@@ -4,6 +4,7 @@
 
 #include <stdint.h>
 
+
 #define debug_out(ptr) uart_print(0, ptr)	
 
 #define IER_RBR		0x01
@@ -46,5 +47,6 @@ extern char 	uart_getc(uint8_t);
 extern void		uart_putc(uint8_t, char);
 extern void 	uart_puts(uint8_t port, char  *, uint32_t);
 extern void 	uart_print(uint8_t port, char  *);
+extern uint32_t uart_readline(uint8_t, char *);
 
 #endif

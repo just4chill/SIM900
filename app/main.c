@@ -13,26 +13,43 @@
 
 #include "uart.h"
 #include "gsm.h"
-//#include "printf_stdarg.h"
-
 
 void 		prvSetupHardware( void );
 static void taskA(void * pvParameters);
 static void taskB(void * pvParameters);
 static void taskC(void * pvParameters);
 
+void uart0_echo(void)
+{
+	while(uart0.num_bytes > 0)
+	{
+		char c = uart_getc(0);
+		uart_puts(0, &c,1);
+	}	
+}
+
+void uart3_echo(void)
+{
+	while(uart3.num_bytes > 0)
+	{
+		char c = uart_getc(3);
+		uart_puts(3, &c,1);
+	}	
+}
+
+void uart0_print_line(void)
+{
+	// uart_readline(0, line);
+	// debug_out(line);
+	// debug_out("\r\n");
+	gsm_read(3, gsm.line, gsm.buff);
+	debug_out("\r\n");
+	debug_out(gsm.buff);
+	debug_out("\r\n");
+}
+
 static void taskA(void * pvParameters)
 {
-	vTaskDelay(100);
-	debug_out("TaskA Started\r\n");
-	xQueueHandle xQueue1;
-	xQueue1 = xQueueCreate(10, sizeof(char));
-	if(xQueue1 == 0)
-		debug_out("Queue1 create failed\r\n");
-	else
-		debug_out("Queue1 create success\r\n");
-
-
 	for(;;)
 	{
 		;
@@ -41,35 +58,23 @@ static void taskA(void * pvParameters)
 
 static void taskB(void * pvParameters)
 {
-	vTaskDelay(200);
-	debug_out("TaskB Started\r\n");
-	xQueueHandle xQueue2;
-	xQueue2 = xQueueCreate(10, sizeof(char));
-	if(xQueue2 == 0)
-		debug_out("Queue2 create failed\r\n");
-	else
-		debug_out("Queue2 create success\r\n");
-
+	debug_out("TaskB\r\n");
 	for(;;)
 	{
-		;
+		uart3_echo();
+		vTaskDelay(1);
 	}
 }
 
 static void taskC(void * pvParameters)
 {
-	vTaskDelay(300);
-	debug_out("TaskC Started\r\n");
-	xQueueHandle xQueue3;
-	xQueue3 = xQueueCreate(10, sizeof(char));
-	if(xQueue3 == 0)
-		debug_out("Queue3 create failed\r\n");
-	else
-		debug_out("Queue3 create success\r\n");
-
+	debug_out("TaskC\r\n");
 	for(;;)
 	{
-		;
+		uart0_print_line();
+		//debug_out("Line Feed\r\n");
+		//debug_out(line);
+		vTaskDelay(1);
 	}
 }
 
@@ -88,7 +93,62 @@ void prvSetupHardware( void )
 	uart_init_fifo(_MODEM_PORT, MODEM_UART_FIFO_SIZE);	
 	uart_init_fifo(_DEBUG_PORT, DEBUG_UART_FIFO_SIZE);	
 	debug_out("System started\r\n");
-	//printf("System started from printf\r\n");
+	modem_out("AT\r");
+	
+
+	gsmMalloc(GSM_RX_BUFFER_SIZE, GSM_LINE_BUFFER_SIZE);
+
+	// build_header(	HEAD,
+	// 				"google.com",
+	// 				"search",
+	// 				NULL,
+	// 				gsm.gsm_buff
+	// 				);
+
+	// debug_out("HEAD HEADER\r\n");
+	// debug_out(gsm.gsm_buff);
+
+	// build_header(	GET,
+	// 				"google.com",
+	// 				"search",
+	// 				NULL,
+	// 				gsm.gsm_buff
+	// 				);
+
+	// debug_out("GET HEADER\r\n");
+	// debug_out(gsm.gsm_buff);
+
+	// build_header(	POST,
+	// 				"google.com",
+	// 				"search",
+	// 				"{\"info\":\"1,200\"}",
+	// 				gsm.gsm_buff
+	// 				);
+
+	// debug_out("POST HEADER\r\n");
+	// debug_out(gsm.gsm_buff);
+
+	// build_header(	PUT,
+	// 				"google.com",
+	// 				"search/1",
+	// 				"{\"info\":\"1,200\"}",
+	// 				gsm.gsm_buff
+	// 				);
+
+	// debug_out("PUT HEADER\r\n");
+	// debug_out(gsm.gsm_buff);
+
+	// build_header(	DELETE,
+	// 				"google.com",
+	// 				"search/1",
+	// 				NULL,
+	// 				gsm.gsm_buff
+	// 				);
+
+	// debug_out("DELETE HEADER\r\n");
+	// debug_out(gsm.gsm_buff);
+
+	//line = (char *) pvPortMalloc(64);
 }
 
 int main(void)

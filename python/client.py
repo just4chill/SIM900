@@ -60,7 +60,7 @@ def PUT():
 
 if CONNECT():
 	# POST()
-	PUT()
+	GET()
 	sock.shutdown(1)
 	sock.close()
 else:
