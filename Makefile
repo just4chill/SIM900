@@ -45,6 +45,9 @@ OBJS = 	list.o \
 		uart.o \
 		syscalls.o \
 		gsm.o \
+		boot.o \
+		app.o \
+		cb.o \
 		ctype_.o \
 		isalnum.o \
 		isalpha.o \
@@ -172,6 +175,15 @@ delay.o: delay.c
 	$(CC)gcc $(CFLAGS) $^ -o $@
 
 gsm.o: gsm.c
+	$(CC)gcc $(CFLAGS) $^ -o $@
+
+app.o: app.c
+	$(CC)gcc $(CFLAGS) $^ -o $@
+
+boot.o: boot.c
+	$(CC)gcc $(CFLAGS) $^ -o $@
+
+cb.o: cb.c
 	$(CC)gcc $(CFLAGS) $^ -o $@
 
 test.o: test.c

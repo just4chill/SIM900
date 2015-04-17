@@ -2,6 +2,8 @@
 #ifndef __config_h__
 #define __config_h__
 
+#define _MIN_RSSI 				15
+
 // Serial Ports
 #define _DEBUG_PORT				0
 #define _MODEM_PORT				3

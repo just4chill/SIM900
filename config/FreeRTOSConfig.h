@@ -80,8 +80,9 @@
 
  #include "LPC17xx.h"
 
-#define vPortSVCHandler SVC_Handler
-#define xPortPendSVHandler PendSV_Handler
+/* Vectors */
+#define vPortSVCHandler     SVC_Handler
+#define xPortPendSVHandler  PendSV_Handler
 #define xPortSysTickHandler SysTick_Handler
 
 /*-----------------------------------------------------------
@@ -113,10 +114,10 @@
 
 #define configUSE_COUNTING_SEMAPHORES 	0
 #define configUSE_ALTERNATIVE_API 		0
-#define configCHECK_FOR_STACK_OVERFLOW	0
+#define configCHECK_FOR_STACK_OVERFLOW	2
 #define configUSE_RECURSIVE_MUTEXES		1
 #define configQUEUE_REGISTRY_SIZE		10
-#define configGENERATE_RUN_TIME_STATS	0
+#define configGENERATE_RUN_TIME_STATS	1
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
@@ -181,6 +182,12 @@ value needs to be equal to or greater than 5 (on the Cortex-M3 the lower the
 numeric value the higher the interrupt priority). */
 #define configEMAC_INTERRUPT_PRIORITY		5
 #define configUSB_INTERRUPT_PRIORITY		6
+
+
+extern void vConfigureTimerForRunTimeStats( void );
+
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()        vConfigureTimerForRunTimeStats()
+#define portGET_RUN_TIME_COUNTER_VALUE()                LPC_TIM0->TC
 
 
 #endif /* FREERTOS_CONFIG_H */
