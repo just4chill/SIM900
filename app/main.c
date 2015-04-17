@@ -116,10 +116,14 @@ void setupModem(void)
 	uint8_t token_count = 0;
 	char test_buff[20];
 	char * next;
+
+	// Query modem and check response
 	modem_out("AT\r");
 	token_count = gsm_read(	2,
 							gsm.line);
 
+
+	// Query Operater name
 	modem_out("AT+COPS?\r");
 	gsm_read(	4,
 				gsm.line);
@@ -138,6 +142,45 @@ void setupModem(void)
 	debug_out(network.opr_name);
 	debug_out("\r\n");
 
+	// Query IMEI
+	modem_out("AT+CGSN\r");
+	gsm_read(	4,
+				gsm.line);
+	line_trim(gsm.line[1],' ');
+	network.imei = (char *)pvPortMalloc(40);
+	strcpy(network.imei, gsm.line[1]);
+	debug_out("IMEI: ");
+	debug_out(network.imei);
+	debug_out("\r\n");
+
+	// Query IMSI
+	modem_out("AT+CIMI\r");
+	gsm_read(	4,
+				gsm.line);
+	line_trim(gsm.line[1], ' ');
+	network.imsi = (char *)pvPortMalloc(40);
+	strcpy(network.imsi, gsm.line[1]);
+	debug_out("IMSI: ");
+	debug_out(network.imsi);
+	debug_out("\r\n");	
+
+	// Query Registration status
+	modem_out("AT+CREG?\r");
+	gsm_read(	4,
+				gsm.line);
+	gsm_tokenize(	gsm.line[1],
+					gsm.token,
+					'\n',
+					':',
+					'\r',
+					',');
+
+	line_trim(gsm.token[2],' ');
+	network.registered = (uint8_t)strtol(gsm.token[2],&next,10);
+	sprintf(test_buff,"REGI: %d\r\n",network.registered);
+	debug_out(test_buff);
+
+	// Query RSSI
 	modem_out("AT+CSQ\r");
 	gsm_read(	4,
 				gsm.line);
@@ -153,10 +196,11 @@ void setupModem(void)
 	sprintf(test_buff,"RSSI: %d\r\n",network.rssi);
 	debug_out(test_buff);
 
-	// +CREG: 0,1
-	modem_out("AT+CREG?\r");
+	// Query GPRS Enabled/Disabled
+	modem_out("AT+CGATT?\r");
 	gsm_read(	4,
 				gsm.line);
+
 	gsm_tokenize(	gsm.line[1],
 					gsm.token,
 					'\n',
@@ -164,12 +208,12 @@ void setupModem(void)
 					'\r',
 					',');
 
-	line_trim(gsm.token[2],' ');
-	gprs.enabled = (uint8_t)strtol(gsm.token[2],&next,10);
+	line_trim(gsm.token[1],' ');
+	gprs.enabled = (uint8_t)strtol(gsm.token[1],&next,10);
 	sprintf(test_buff,"GPRS: %d\r\n",gprs.enabled);
 	debug_out(test_buff);
 
-	// +CREG: 0,1
+	// Query IP Status
 	modem_out("AT+CIPSTATUS\r");
 	gsm_read(	4,
 				gsm.line);
@@ -182,18 +226,10 @@ void setupModem(void)
 					',');
 
 	line_trim(gsm.token[1],' ');
-	/*debug_out("\r\n");
-	debug_out(gsm.line[0]);
+	gprs.ip_status = (char *)pvPortMalloc(32);
+	strcpy(gprs.ip_status, gsm.token[1]);
+	debug_out("IP STATUS: ");
+	debug_out(gprs.ip_status);
 	debug_out("\r\n");
-	debug_out(gsm.line[1]);*/
-	debug_out("\r\n");
-	debug_out(gsm.token[1]);
-	debug_out("\r\n");
-	/*debug_out(gsm.line[3]);
-	debug_out("\r\n");*/
-	// line_trim(gsm.token[2],' ');
-	// gprs.enabled = (uint8_t)strtol(gsm.token[2],&next,10);
-	// sprintf(test_buff,"GPRS: %d\r\n",gprs.enabled);
-	// debug_out(test_buff);
 }
 

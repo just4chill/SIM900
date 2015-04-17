@@ -17,8 +17,8 @@
 typedef struct 
 {
 	uint8_t 	rssi;
+	uint8_t		registered;
 	char 	* 	opr_name;
-	char 	* 	manufacturer;
 	char 	* 	imei;
 	char 	* 	imsi;
 }NETWORK;
