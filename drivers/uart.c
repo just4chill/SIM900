@@ -651,14 +651,14 @@ uint32_t uart_readline(uint8_t port, char * line)
 
 		else if(port == 3)
 		{
-			while(c != '\n')
+			while(c != '\r')
 			{	
 				if(uart3.num_bytes > 0)
 				{
 					c = uart_getc(3);
 					line[i++] = c;
 				}
-				if(c == '\n')
+				if(c == '\r')
 					break;
 			}
 			line[i] = '\0';

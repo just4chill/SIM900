@@ -25,9 +25,9 @@ VPATH = kernel: \
 
 LDSCRIPT = linker.ld
 
-CFLAGS = 	-g -c -Wall -Os -mthumb \
+CFLAGS = 	-g -c -Wall -Os -mthumb -mthumb-interwork \
  			-mcpu=cortex-m3 $(INC) -std=gnu99 
-LFLAGS = 	-g -Wall -Os -mthumb -mcpu=cortex-m3 -nostartfiles \
+LFLAGS = 	-g -Wall -Os -mthumb -mthumb-interwork -mcpu=cortex-m3 -nostartfiles \
 			-nodefaultlibs \
 			-T$(LDSCRIPT) 
 
@@ -38,14 +38,13 @@ OBJS = 	list.o \
 		tasks.o \
 		timers.o \
 		port.o \
-		heap_2.o \
+		heap_1.o \
 		lpc17xx.o \
 		system_LPC17xx.o \
 		main.o \
 		uart.o \
 		syscalls.o \
 		gsm.o \
-		test.o \
 		ctype_.o \
 		isalnum.o \
 		isalpha.o \
@@ -149,6 +148,9 @@ heap_1.o: heap_1.c
 	$(CC)gcc $(CFLAGS) $^ -o $@
 
 heap_2.o: heap_2.c
+	$(CC)gcc $(CFLAGS) $^ -o $@
+
+heap_3.o: heap_3.c
 	$(CC)gcc $(CFLAGS) $^ -o $@
 
 main.o: main.c

@@ -24,58 +24,40 @@ void setupModem(void);
 
 static void taskA(void * pvParameters)
 {
+	vTaskDelay(10);
+	debug_out("TaskA\r\n");
 	for(;;)
 	{
-		;
+		vTaskDelay(1);
 	}
 }
 
 static void taskB(void * pvParameters)
 {
+	vTaskDelay(20);
 	debug_out("TaskB\r\n");
 	for(;;)
 	{
-		uart3_echo();
 		vTaskDelay(1);
 	}
 }
 
 static void taskC(void * pvParameters)
 {
+	vTaskDelay(30);
 	debug_out("TaskC\r\n");
 	uint8_t flag = 0;
 	for(;;)
 	{
-		// gsm_read(	2,
-		// 			gsm.line,
-		// 			gsm.buff);
-		//debug_out("Received\r\n");
-		//debug_out(gsm.buff);
-		//gsm_init_tokens(100,32);
-		// uint8_t toks =gsm_tokenize(	gsm.buff,
-		// 					gsm.token,
-		// 					'\r',
-		// 					':',
-		// 					'\r',
-		// 					','
-		// 					);
-
-		// for(uint8_t i = 0;i < toks;i++)
-		// {
-		// 	debug_out(gsm.token[i]);
-		// 	debug_out("\r\n");
-		// }
-		//gsm_free_tokens(100);
 		if(flag == 0)
 		{
 			flag = 1;
 			setupModem();
 		}
-		vTaskDelay(1);
+		vTaskDelay(1000);
 	}
 }
 
-const char test_buff1[] = "\r+HTTPACTION: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100\r";
 
 void prvSetupHardware( void )
 {
@@ -91,24 +73,9 @@ void prvSetupHardware( void )
 	uart_init_fifo(_MODEM_PORT, MODEM_UART_FIFO_SIZE);	
 	uart_init_fifo(_DEBUG_PORT, DEBUG_UART_FIFO_SIZE);	
 	debug_out("System started\r\n");
-	modem_out("AT\r");
-	gsmMalloc(GSM_RX_BUFFER_SIZE, GSM_LINE_BUFFER_SIZE);
 
-	// gsm_init_tokens(110,32);
-	// uint8_t toks =gsm_tokenize(	test_buff1,
-	// 							gsm.token,
-	// 							'\r',
-	// 							':',
-	// 							'\r',
-	// 							','
-	// 							);
-
-	// for(uint8_t i = 0;i < toks;i++)
-	// {
-	// 	debug_out(gsm.token[i]);
-	// 	debug_out("\r\n");
-	// }
-	// gsm_free_tokens(110);
+	// Init GSM Buffers
+	gsm_init();
 }
 
 int main(void)
@@ -146,119 +113,87 @@ int main(void)
 
 void setupModem(void)
 {
-	// Query modem
+	uint8_t token_count = 0;
+	char test_buff[20];
+	char * next;
 	modem_out("AT\r");
-	gsm_read(	2,
-				gsm.line,
-			gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
+	token_count = gsm_read(	2,
+							gsm.line);
 
-	// Cehck netwk registration
-	modem_out("AT+CREG?\r");
-	gsm_read(	2,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Query RSSI
-	modem_out("AT+CSQ\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Check GPRS Status
-	modem_out("AT+CGATT?\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Get provider name from SIM
-	modem_out("AT+CSPN?\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Check network name
 	modem_out("AT+COPS?\r");
 	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
+				gsm.line);
+
+	gsm_tokenize(	gsm.line[1],
+					gsm.token,
+					'\n',
+					':',
+					'\r',
+					',');
+
+	line_trim(gsm.token[3],'"');
+	network.opr_name = (char *)pvPortMalloc(16);
+	strcpy(network.opr_name,gsm.token[3]);
+	debug_out("NETWORK: ");
+	debug_out(network.opr_name);
 	debug_out("\r\n");
 
-	// Check version
-	modem_out("ATI\r");
+	modem_out("AT+CSQ\r");
 	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
+				gsm.line);
+	gsm_tokenize(	gsm.line[1],
+					gsm.token,
+					'\n',
+					':',
+					'\r',
+					',');
 
-	// Check IP Status
+	line_trim(gsm.token[1],' ');
+	network.rssi = (uint32_t)strtol(gsm.token[1],&next,10);
+	sprintf(test_buff,"RSSI: %d\r\n",network.rssi);
+	debug_out(test_buff);
+
+	// +CREG: 0,1
+	modem_out("AT+CREG?\r");
+	gsm_read(	4,
+				gsm.line);
+	gsm_tokenize(	gsm.line[1],
+					gsm.token,
+					'\n',
+					':',
+					'\r',
+					',');
+
+	line_trim(gsm.token[2],' ');
+	gprs.enabled = (uint8_t)strtol(gsm.token[2],&next,10);
+	sprintf(test_buff,"GPRS: %d\r\n",gprs.enabled);
+	debug_out(test_buff);
+
+	// +CREG: 0,1
 	modem_out("AT+CIPSTATUS\r");
 	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
+				gsm.line);
+
+	gsm_tokenize(	gsm.line[3],
+					gsm.token,
+					'\n',
+					':',
+					'\r',
+					',');
+
+	line_trim(gsm.token[1],' ');
+	/*debug_out("\r\n");
+	debug_out(gsm.line[0]);
 	debug_out("\r\n");
-
-	// Check manufacturer
-	modem_out("AT+CGMM\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
+	debug_out(gsm.line[1]);*/
 	debug_out("\r\n");
-
-	// Check manufacturer ID
-	modem_out("AT+CGMI\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
+	debug_out(gsm.token[1]);
 	debug_out("\r\n");
-
-	// Revision
-	modem_out("AT+CGMR\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Serial number (IMEI)
-	modem_out("AT+CGSN\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// IMSI
-	modem_out("AT+CIMI\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-	// Char set
-	modem_out("AT+CSCS?\r");
-	gsm_read(	4,
-				gsm.line,
-				gsm.buff);
-	debug_out(gsm.buff);
-	debug_out("\r\n");
-
-
-
+	/*debug_out(gsm.line[3]);
+	debug_out("\r\n");*/
+	// line_trim(gsm.token[2],' ');
+	// gprs.enabled = (uint8_t)strtol(gsm.token[2],&next,10);
+	// sprintf(test_buff,"GPRS: %d\r\n",gprs.enabled);
+	// debug_out(test_buff);
 }
 

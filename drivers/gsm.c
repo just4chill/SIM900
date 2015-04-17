@@ -7,7 +7,10 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-gsmObj gsm;
+NETWORK network;
+GPRS gprs;
+HTTP http;
+GSM gsm;
 
 void build_header(	uint8_t method,
 					char * 	host,
@@ -67,74 +70,25 @@ void build_header(	uint8_t method,
 }
 
 
-void gsmMalloc(uint32_t _size, uint32_t __size)
-{
-	gsm.buff_size = _size;
-	gsm.line_buff_size = __size;
-	gsm.netwk_name = (char *) pvPortMalloc(32);
-	gsm.ip_status = (char *) pvPortMalloc(64);
-	gsm.ip_addr = (char *) pvPortMalloc(32);
-	gsm.http_status = (char *) pvPortMalloc(4);
-	gsm.buff = (char *) pvPortMalloc(gsm.buff_size);
-	gsm.line = (char *) pvPortMalloc(gsm.line_buff_size);
-}
-
-
-uint32_t gsm_read(	uint8_t lines, 
-					char * line, 
-					char * buff
+uint32_t gsm_read(	uint8_t num_lines, 
+					char ** line
 				)
 {
 	uint32_t _size = 0;
-	for(uint8_t i = 0;i < lines;i++)
+	for(uint8_t i = 0;i < num_lines;i++)
 	{
-		uint32_t _len = modem_readline(line);
-		memcpy(&buff[_size], line, _len);
+		vPortFree(line[i]);
+		uint32_t _len = modem_readline(gsm.buff);
+		line[i] = pvPortMalloc(_len);
+		memcpy(line[i], gsm.buff, _len);
 		_size += _len;
 	}
-	buff[_size] = '\0';
 	return _size;
 }
 
 
-void gsm_init_tokens(uint8_t num, uint8_t _size)
-{
-	for(uint8_t i = 0;i < num;i++)
-	{
-		gsm.token[i] = (char *) pvPortMalloc(_size);
-	}
-}
-
-void gsm_free_tokens(uint8_t num)
-{
-	for(uint8_t i = 0;i < num;i++)
-	{
-		vPortFree(gsm.token[i]);
-	}	
-}
-
-char * StringTrim(char * *pointerToString)
-{
-    uint8_t start=0, length=0;
-
-        // Trim.Start:
-        length = strlen(*pointerToString);
-        while ((*pointerToString)[start]==' ') start++;
-        (*pointerToString) += start;
-
-        if (start < length) // Required for empty (ex. "    ") input
-        {
-            // Trim.End:
-            uint8_t end = strlen(*pointerToString)-1; // Get string length again (after Trim.Start)
-            while ((*pointerToString)[end]==' ') end--;
-            (*pointerToString)[end+1] = 0;
-        }
-
-    return *pointerToString;
-}
-
 uint8_t gsm_tokenize(	char * buff,
-						char ** tokens,
+						char ** token,
 						char __start,
 						char __middle,
 						char __end,
@@ -142,13 +96,22 @@ uint8_t gsm_tokenize(	char * buff,
 				)
 {
 	uint8_t end_flag = 0;
+	uint32_t __size;
 	char * _index, * _rindex, * _next;
 	_index 	= index(buff, __start);
 	_next	= index(_index, __middle);
-	//debug_out("token init\r\n");
-	//debug_out(_index);
-	memcpy(tokens[0], _index, _next - _index);
-	memcpy(&tokens[0][_next - _index],'\0',1);
+
+	// Calculate size
+	__size = _next - _index;
+
+	// Allocate memory for first token
+	token[0] = (char * ) pvPortMalloc(__size + 2);
+
+	// Copy token
+	memcpy(token[0], _index, __size);
+	token[0][__size] = '\0';
+
+	//debug_out(token[0]);
 
 	uint8_t i = 1;
 	while(!end_flag)
@@ -157,23 +120,59 @@ uint8_t gsm_tokenize(	char * buff,
 		_next = index(_index, __delimit);
 		if(_next != NULL)
 		{
-			memcpy(tokens[i],_index,_next - _index);	
-			memcpy(&tokens[i][_next - _index],'\0',1);
-			//StringTrim(&tokens[i]);
-			//tokens[i] = trim(tokens[i]);
+			// Calculate size
+			__size = _next - _index;
+
+			// Allocate memory for first token
+			token[i] = (char * ) pvPortMalloc(__size + 2);
+
+			// Copy token
+			memcpy(token[i],_index,__size);	
+			token[i][__size] = '\0';
 		}
 		else
 		{
 			_next = index(_index, __end);
-			memcpy(tokens[i],_index,_next - _index);
-			memcpy(&tokens[i][_next - _index],'\0',1);
-			//tokens[i] = trim(tokens[i]);
-			//StringTrim(&tokens[i]);
+
+			// Calculate size
+			__size = _next - _index;
+
+			// Allocate memory for first token
+			token[i] = (char * ) pvPortMalloc(__size + 2);
+
+			// Copy token			
+			memcpy(token[i],_index,__size);
+			token[i][__size] = '\0';
+			// Raise end flag
 			end_flag = 1;	
 		}
+		// Increment
 		i++;
 	}
+	// Return number of tokens
 	return i;
+}
+
+void gsm_init(void)
+{
+	// Initiate 512 bytes buffer for general purpose
+	gsm.buff = (char *) pvPortMalloc(512);
+}
+
+uint8_t line_trim(char * ptr, char c)
+{
+	uint8_t i;
+	uint8_t j = 0;
+	for(i = 0;ptr[i] != '\0';i++)
+	{
+		if(ptr[i] != '\n' && ptr[i] != ' ' && ptr[i] != c)
+		{
+			gsm.buff[j++] = ptr[i];	
+		}	
+	}
+	gsm.buff[j] = '\0';
+	memcpy(ptr, gsm.buff, j+1);
+	return j;
 }
 
 
