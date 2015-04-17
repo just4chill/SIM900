@@ -1,6 +1,8 @@
 
+# Toolachain prefix
 CC = arm-none-eabi-
 
+# Include paths
 INC = 	-Ikernel/include \
 		-Ikernel/portable/GCC/ARM_CM3 \
 		-Idevice \
@@ -10,6 +12,7 @@ INC = 	-Ikernel/include \
 		-Iminilib/include \
 		-Itest
 
+# Search paths (For sources and libs)
 VPATH = kernel: \
 		kernel/portable/GCC/ARM_CM3: \
 		kernel/portable/MemMang: \
@@ -23,16 +26,23 @@ VPATH = kernel: \
 		minilib/string: \
 		test
 
+# Linker script
 LDSCRIPT = linker.ld
 
-CFLAGS = 	-g -c -Wall -Os -mthumb -mthumb-interwork \
+# Compiler flags
+CFLAGS = 	-g -c -Wall -gdwarf-2 -Os -mapcs-frame -mthumb -mthumb-interwork \
+			-ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin \
  			-mcpu=cortex-m3 $(INC) -std=gnu99 
-LFLAGS = 	-g -Wall -Os -mthumb -mthumb-interwork -mcpu=cortex-m3 -nostartfiles \
-			-nodefaultlibs \
+
+# Linker flags
+LFLAGS = 	-g -Wall -Os -mapcs-frame -mthumb -mthumb-interwork -mcpu=cortex-m3 -nostartfiles \
+			-nodefaultlibs -Wl,-Map=app.map -Wl,--gc-sections \
 			-T$(LDSCRIPT) 
 
+# Image name
 OUTPUT = app.elf
 
+# Objects
 OBJS = 	list.o \
 		queue.o \
 		tasks.o \
@@ -125,13 +135,16 @@ OBJS = 	list.o \
 		strstr.o \
 		strupr.o
 
+# All
 all: $(OBJS)
 	$(CC)gcc $(LFLAGS) $(OBJS) -o $(OUTPUT)
 	$(CC)size $(OUTPUT)
 
+# Clean
 clean: $(OBJS)
 	-rm $(OBJS)
 
+# Files
 list.o: list.c
 	$(CC)gcc $(CFLAGS) $^ -o $@
 

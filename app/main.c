@@ -47,7 +47,7 @@ int main(void)
 
 	xTaskCreate(sysboot,
 			(signed portCHAR *)"sysboot",
-			128,
+			configMINIMAL_STACK_SIZE,
 			NULL,
 			tskIDLE_PRIORITY,
 			NULL);

@@ -101,7 +101,7 @@
 #define configUSE_TICK_HOOK			0
 #define configCPU_CLOCK_HZ			( ( unsigned long ) 100000000 )
 #define configTICK_RATE_HZ			( 1000 )
-#define configMINIMAL_STACK_SIZE	( ( unsigned short ) 80 )
+#define configMINIMAL_STACK_SIZE	( ( unsigned short ) 128 )
 #define configTOTAL_HEAP_SIZE		( ( size_t ) ( 19 * 1024 ) )
 #define configMAX_TASK_NAME_LEN		( 12 )
 #define configUSE_TRACE_FACILITY	0

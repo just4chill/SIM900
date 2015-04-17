@@ -1,0 +1,2236 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+uart0               0x1c              uart.o
+stdout              0x4               syscalls.o
+uart1               0x1c              uart.o
+xQueueRegistry      0x50              queue.o
+gprs                0x18              gsm.o
+stdin               0x4               syscalls.o
+uart3               0x1c              uart.o
+gsm                 0x3fc             gsm.o
+stderr              0x4               syscalls.o
+network             0x10              gsm.o
+http                0xc               gsm.o
+uart2               0x1c              uart.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 list.o
+ .data          0x00000000        0x0 list.o
+ .bss           0x00000000        0x0 list.o
+ .text          0x00000000        0x0 queue.o
+ .data          0x00000000        0x0 queue.o
+ .bss           0x00000000        0x0 queue.o
+ .text.prvCopyDataToQueue
+                0x00000000       0x58 queue.o
+ .text.prvCopyDataFromQueue
+                0x00000000       0x26 queue.o
+ .text.prvUnlockQueue
+                0x00000000       0x64 queue.o
+ .text.xQueueGenericReset
+                0x00000000       0x48 queue.o
+ .text.xQueueGenericCreate
+                0x00000000       0x42 queue.o
+ .text.xQueueGenericSend
+                0x00000000       0xce queue.o
+ .text.xQueueCreateMutex
+                0x00000000       0x44 queue.o
+ .text.xQueueGiveMutexRecursive
+                0x00000000       0x2a queue.o
+ .text.xQueueGenericSendFromISR
+                0x00000000       0x4e queue.o
+ .text.xQueueGenericReceive
+                0x00000000      0x102 queue.o
+ .text.xQueueTakeMutexRecursive
+                0x00000000       0x32 queue.o
+ .text.xQueueReceiveFromISR
+                0x00000000       0x4a queue.o
+ .text.uxQueueMessagesWaiting
+                0x00000000       0x12 queue.o
+ .text.uxQueueMessagesWaitingFromISR
+                0x00000000        0x4 queue.o
+ .text.vQueueDelete
+                0x00000000       0x34 queue.o
+ .text.xQueueIsQueueEmptyFromISR
+                0x00000000        0xc queue.o
+ .text.xQueueIsQueueFullFromISR
+                0x00000000        0xc queue.o
+ .text.vQueueAddToRegistry
+                0x00000000       0x24 queue.o
+ .debug_info    0x00000000     0x1018 queue.o
+ .debug_abbrev  0x00000000      0x2e9 queue.o
+ .debug_loc     0x00000000      0xab2 queue.o
+ .debug_aranges
+                0x00000000       0xa8 queue.o
+ .debug_ranges  0x00000000       0xb0 queue.o
+ .debug_line    0x00000000      0x33e queue.o
+ .debug_str     0x00000000      0x7a6 queue.o
+ .comment       0x00000000       0x71 queue.o
+ .ARM.attributes
+                0x00000000       0x33 queue.o
+ .debug_frame   0x00000000      0x1f0 queue.o
+ COMMON         0x00000000       0x50 queue.o
+ .text          0x00000000        0x0 tasks.o
+ .data          0x00000000        0x0 tasks.o
+ .bss           0x00000000        0x0 tasks.o
+ .text.prvGenerateRunTimeStatsForTasksInList
+                0x00000000       0x8c tasks.o
+ .text.vTaskDelete
+                0x00000000       0x70 tasks.o
+ .text.uxTaskPriorityGet
+                0x00000000       0x1c tasks.o
+ .text.vTaskPrioritySet
+                0x00000000       0x98 tasks.o
+ .text.xTaskIsTaskSuspended
+                0x00000000       0x28 tasks.o
+ .text.vTaskResume
+                0x00000000       0x64 tasks.o
+ .text.xTaskResumeFromISR
+                0x00000000       0x7c tasks.o
+ .text.vTaskEndScheduler
+                0x00000000       0x18 tasks.o
+ .text.xTaskGetTickCount
+                0x00000000       0x18 tasks.o
+ .text.xTaskGetTickCountFromISR
+                0x00000000       0x1c tasks.o
+ .text.uxTaskGetNumberOfTasks
+                0x00000000        0xc tasks.o
+ .text.vTaskDelayUntil
+                0x00000000       0x60 tasks.o
+ .text.vTaskGetRunTimeStats
+                0x00000000       0xb4 tasks.o
+ .text.vTaskSuspend
+                0x00000000       0x74 tasks.o
+ .text.vTaskPlaceOnEventList
+                0x00000000       0x44 tasks.o
+ .text.xTaskRemoveFromEventList
+                0x00000000       0x64 tasks.o
+ .text.vTaskSetTimeOutState
+                0x00000000       0x18 tasks.o
+ .text.xTaskCheckForTimeOut
+                0x00000000       0x54 tasks.o
+ .text.vTaskMissedYield
+                0x00000000        0xc tasks.o
+ .text.uxTaskGetStackHighWaterMark
+                0x00000000       0x20 tasks.o
+ .text.xTaskGetCurrentTaskHandle
+                0x00000000        0xc tasks.o
+ .text.vTaskPriorityInherit
+                0x00000000       0x68 tasks.o
+ .text.vTaskPriorityDisinherit
+                0x00000000       0x48 tasks.o
+ .bss.pcStatsString
+                0x00000000       0x32 tasks.o
+ .text          0x00000000        0x0 timers.o
+ .data          0x00000000        0x0 timers.o
+ .bss           0x00000000        0x0 timers.o
+ .debug_info    0x00000000       0x94 timers.o
+ .debug_abbrev  0x00000000       0x4b timers.o
+ .debug_aranges
+                0x00000000       0x18 timers.o
+ .debug_line    0x00000000       0xb3 timers.o
+ .debug_str     0x00000000      0x1cb timers.o
+ .comment       0x00000000       0x71 timers.o
+ .ARM.attributes
+                0x00000000       0x33 timers.o
+ .text          0x00000000        0x0 port.o
+ .data          0x00000000        0x0 port.o
+ .bss           0x00000000        0x0 port.o
+ .text.vPortEndScheduler
+                0x00000000        0x2 port.o
+ .text          0x00000000        0x0 heap_1.o
+ .data          0x00000000        0x0 heap_1.o
+ .bss           0x00000000        0x0 heap_1.o
+ .text.vPortInitialiseBlocks
+                0x00000000        0xc heap_1.o
+ .text.xPortGetFreeHeapSize
+                0x00000000       0x10 heap_1.o
+ .text          0x00000000        0x0 lpc17xx.o
+ .data          0x00000000        0x0 lpc17xx.o
+ .bss           0x00000000        0x0 lpc17xx.o
+ .text          0x00000000        0x0 system_LPC17xx.o
+ .data          0x00000000        0x0 system_LPC17xx.o
+ .bss           0x00000000        0x0 system_LPC17xx.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 uart.o
+ .data          0x00000000        0x0 uart.o
+ .bss           0x00000000        0x0 uart.o
+ .text.uart_puts
+                0x00000000       0x72 uart.o
+ .text          0x00000000        0x0 syscalls.o
+ .data          0x00000000        0x0 syscalls.o
+ .bss           0x00000000        0x0 syscalls.o
+ .text._sbrk    0x00000000        0x6 syscalls.o
+ .text._close   0x00000000        0x6 syscalls.o
+ .text._execve  0x00000000        0x6 syscalls.o
+ .text._exit    0x00000000        0x2 syscalls.o
+ .text._fork    0x00000000        0x6 syscalls.o
+ .text._fstat   0x00000000        0x4 syscalls.o
+ .text._getpid  0x00000000        0x4 syscalls.o
+ .text._kill    0x00000000        0x6 syscalls.o
+ .text.isatty   0x00000000        0x4 syscalls.o
+ .text._isatty  0x00000000        0x4 syscalls.o
+ .text._link    0x00000000        0x6 syscalls.o
+ .text._lseek   0x00000000        0x4 syscalls.o
+ .text._open    0x00000000        0x6 syscalls.o
+ .text._read    0x00000000        0x4 syscalls.o
+ .text._stat    0x00000000        0x4 syscalls.o
+ .text._times   0x00000000        0x6 syscalls.o
+ .text._unlink  0x00000000        0x6 syscalls.o
+ .text._wait    0x00000000        0x6 syscalls.o
+ .text._write   0x00000000        0x6 syscalls.o
+ .text._fopen   0x00000000        0x4 syscalls.o
+ .text._fclose  0x00000000        0x4 syscalls.o
+ .text._malloc  0x00000000        0x4 syscalls.o
+ .text._free    0x00000000        0x2 syscalls.o
+ .debug_info    0x00000000      0x5ef syscalls.o
+ .debug_abbrev  0x00000000      0x12d syscalls.o
+ .debug_loc     0x00000000      0x273 syscalls.o
+ .debug_aranges
+                0x00000000       0xd0 syscalls.o
+ .debug_ranges  0x00000000       0xc0 syscalls.o
+ .debug_line    0x00000000      0x1c6 syscalls.o
+ .debug_str     0x00000000      0x2ba syscalls.o
+ .comment       0x00000000       0x71 syscalls.o
+ .ARM.attributes
+                0x00000000       0x33 syscalls.o
+ .debug_frame   0x00000000      0x180 syscalls.o
+ COMMON         0x00000000        0xc syscalls.o
+ .text          0x00000000        0x0 gsm.o
+ .data          0x00000000        0x0 gsm.o
+ .bss           0x00000000        0x0 gsm.o
+ .text.build_header
+                0x00000000      0x108 gsm.o
+ .text.gsm_query_operator
+                0x00000000       0x58 gsm.o
+ .text.gsm_query_imei
+                0x00000000       0x3c gsm.o
+ .text.gsm_query_imsi
+                0x00000000       0x3c gsm.o
+ .text.gsm_get_apn
+                0x00000000       0x58 gsm.o
+ .text.gsm_activate_gprs
+                0x00000000       0x44 gsm.o
+ .text.gsm_tcp_start
+                0x00000000       0x84 gsm.o
+ .text.gsm_tcp_close
+                0x00000000       0x54 gsm.o
+ .text.gsm_query_dns
+                0x00000000       0x90 gsm.o
+ .text.gsm_tcp_send
+                0x00000000       0x3c gsm.o
+ .text.json_build
+                0x00000000       0x90 gsm.o
+ .text.json_parse
+                0x00000000       0x7e gsm.o
+ .text          0x00000000        0x0 boot.o
+ .data          0x00000000        0x0 boot.o
+ .bss           0x00000000        0x0 boot.o
+ .text          0x00000000        0x0 app.o
+ .data          0x00000000        0x0 app.o
+ .bss           0x00000000        0x0 app.o
+ .text.http_process
+                0x00000000       0x18 app.o
+ .text.fetch_data_process
+                0x00000000       0x18 app.o
+ .text          0x00000000        0x0 cb.o
+ .data          0x00000000        0x0 cb.o
+ .bss           0x00000000        0x0 cb.o
+ .text.vApplicationTickHook
+                0x00000000       0x10 cb.o
+ .bss.ulTicksSinceLastDisplay.5745
+                0x00000000        0x4 cb.o
+ .text          0x00000000        0x0 ctype_.o
+ .data          0x00000000        0x0 ctype_.o
+ .bss           0x00000000        0x0 ctype_.o
+ .data.__ctype_ptr__
+                0x00000000        0x4 ctype_.o
+ .text          0x00000000        0x0 isalnum.o
+ .data          0x00000000        0x0 isalnum.o
+ .bss           0x00000000        0x0 isalnum.o
+ .text.isalnum  0x00000000       0x1a isalnum.o
+ .debug_info    0x00000000       0x5c isalnum.o
+ .debug_abbrev  0x00000000       0x4c isalnum.o
+ .debug_loc     0x00000000       0x47 isalnum.o
+ .debug_aranges
+                0x00000000       0x20 isalnum.o
+ .debug_ranges  0x00000000       0x10 isalnum.o
+ .debug_line    0x00000000       0x51 isalnum.o
+ .debug_str     0x00000000      0x12f isalnum.o
+ .comment       0x00000000       0x71 isalnum.o
+ .ARM.attributes
+                0x00000000       0x33 isalnum.o
+ .debug_frame   0x00000000       0x20 isalnum.o
+ .text          0x00000000        0x0 isalpha.o
+ .data          0x00000000        0x0 isalpha.o
+ .bss           0x00000000        0x0 isalpha.o
+ .text          0x00000000        0x0 isascii.o
+ .data          0x00000000        0x0 isascii.o
+ .bss           0x00000000        0x0 isascii.o
+ .text.isascii  0x00000000        0xa isascii.o
+ .debug_info    0x00000000       0x5c isascii.o
+ .debug_abbrev  0x00000000       0x4c isascii.o
+ .debug_loc     0x00000000       0x21 isascii.o
+ .debug_aranges
+                0x00000000       0x20 isascii.o
+ .debug_ranges  0x00000000       0x10 isascii.o
+ .debug_line    0x00000000       0x48 isascii.o
+ .debug_str     0x00000000      0x12f isascii.o
+ .comment       0x00000000       0x71 isascii.o
+ .ARM.attributes
+                0x00000000       0x33 isascii.o
+ .debug_frame   0x00000000       0x20 isascii.o
+ .text          0x00000000        0x0 isblank.o
+ .data          0x00000000        0x0 isblank.o
+ .bss           0x00000000        0x0 isblank.o
+ .text.isblank  0x00000000       0x12 isblank.o
+ .debug_info    0x00000000       0x5c isblank.o
+ .debug_abbrev  0x00000000       0x4c isblank.o
+ .debug_loc     0x00000000       0x39 isblank.o
+ .debug_aranges
+                0x00000000       0x20 isblank.o
+ .debug_ranges  0x00000000       0x10 isblank.o
+ .debug_line    0x00000000       0x51 isblank.o
+ .debug_str     0x00000000      0x12f isblank.o
+ .comment       0x00000000       0x71 isblank.o
+ .ARM.attributes
+                0x00000000       0x33 isblank.o
+ .debug_frame   0x00000000       0x20 isblank.o
+ .text          0x00000000        0x0 iscntrl.o
+ .data          0x00000000        0x0 iscntrl.o
+ .bss           0x00000000        0x0 iscntrl.o
+ .text.iscntrl  0x00000000       0x12 iscntrl.o
+ .debug_info    0x00000000       0x5c iscntrl.o
+ .debug_abbrev  0x00000000       0x4c iscntrl.o
+ .debug_loc     0x00000000       0x3a iscntrl.o
+ .debug_aranges
+                0x00000000       0x20 iscntrl.o
+ .debug_ranges  0x00000000       0x10 iscntrl.o
+ .debug_line    0x00000000       0x51 iscntrl.o
+ .debug_str     0x00000000      0x12f iscntrl.o
+ .comment       0x00000000       0x71 iscntrl.o
+ .ARM.attributes
+                0x00000000       0x33 iscntrl.o
+ .debug_frame   0x00000000       0x20 iscntrl.o
+ .text          0x00000000        0x0 isdigit.o
+ .data          0x00000000        0x0 isdigit.o
+ .bss           0x00000000        0x0 isdigit.o
+ .text          0x00000000        0x0 islower.o
+ .data          0x00000000        0x0 islower.o
+ .bss           0x00000000        0x0 islower.o
+ .text.islower  0x00000000        0xc islower.o
+ .debug_info    0x00000000       0x5c islower.o
+ .debug_abbrev  0x00000000       0x4c islower.o
+ .debug_loc     0x00000000       0x2f islower.o
+ .debug_aranges
+                0x00000000       0x20 islower.o
+ .debug_ranges  0x00000000       0x10 islower.o
+ .debug_line    0x00000000       0x49 islower.o
+ .debug_str     0x00000000      0x12f islower.o
+ .comment       0x00000000       0x71 islower.o
+ .ARM.attributes
+                0x00000000       0x33 islower.o
+ .debug_frame   0x00000000       0x20 islower.o
+ .text          0x00000000        0x0 isprint.o
+ .data          0x00000000        0x0 isprint.o
+ .bss           0x00000000        0x0 isprint.o
+ .text.isgraph  0x00000000        0xc isprint.o
+ .text.isprint  0x00000000        0xc isprint.o
+ .debug_info    0x00000000       0x83 isprint.o
+ .debug_abbrev  0x00000000       0x66 isprint.o
+ .debug_loc     0x00000000       0x5c isprint.o
+ .debug_aranges
+                0x00000000       0x28 isprint.o
+ .debug_ranges  0x00000000       0x18 isprint.o
+ .debug_line    0x00000000       0x5a isprint.o
+ .debug_str     0x00000000      0x137 isprint.o
+ .comment       0x00000000       0x71 isprint.o
+ .ARM.attributes
+                0x00000000       0x33 isprint.o
+ .debug_frame   0x00000000       0x30 isprint.o
+ .text          0x00000000        0x0 ispunct.o
+ .data          0x00000000        0x0 ispunct.o
+ .bss           0x00000000        0x0 ispunct.o
+ .text.ispunct  0x00000000       0x1a ispunct.o
+ .debug_info    0x00000000       0xad ispunct.o
+ .debug_abbrev  0x00000000       0x9f ispunct.o
+ .debug_loc     0x00000000       0x3e ispunct.o
+ .debug_aranges
+                0x00000000       0x20 ispunct.o
+ .debug_ranges  0x00000000       0x10 ispunct.o
+ .debug_line    0x00000000       0x70 ispunct.o
+ .debug_str     0x00000000      0x13f ispunct.o
+ .comment       0x00000000       0x71 ispunct.o
+ .ARM.attributes
+                0x00000000       0x33 ispunct.o
+ .debug_frame   0x00000000       0x28 ispunct.o
+ .text          0x00000000        0x0 isspace.o
+ .data          0x00000000        0x0 isspace.o
+ .bss           0x00000000        0x0 isspace.o
+ .text          0x00000000        0x0 isupper.o
+ .data          0x00000000        0x0 isupper.o
+ .bss           0x00000000        0x0 isupper.o
+ .text          0x00000000        0x0 isxdigit.o
+ .data          0x00000000        0x0 isxdigit.o
+ .bss           0x00000000        0x0 isxdigit.o
+ .text.isxdigit
+                0x00000000       0x1c isxdigit.o
+ .debug_info    0x00000000       0x5c isxdigit.o
+ .debug_abbrev  0x00000000       0x4c isxdigit.o
+ .debug_loc     0x00000000       0x38 isxdigit.o
+ .debug_aranges
+                0x00000000       0x20 isxdigit.o
+ .debug_ranges  0x00000000       0x10 isxdigit.o
+ .debug_line    0x00000000       0x52 isxdigit.o
+ .debug_str     0x00000000      0x131 isxdigit.o
+ .comment       0x00000000       0x71 isxdigit.o
+ .ARM.attributes
+                0x00000000       0x33 isxdigit.o
+ .debug_frame   0x00000000       0x20 isxdigit.o
+ .text          0x00000000        0x0 toascii.o
+ .data          0x00000000        0x0 toascii.o
+ .bss           0x00000000        0x0 toascii.o
+ .text.toascii  0x00000000        0x6 toascii.o
+ .debug_info    0x00000000       0x5c toascii.o
+ .debug_abbrev  0x00000000       0x4c toascii.o
+ .debug_loc     0x00000000       0x21 toascii.o
+ .debug_aranges
+                0x00000000       0x20 toascii.o
+ .debug_ranges  0x00000000       0x10 toascii.o
+ .debug_line    0x00000000       0x48 toascii.o
+ .debug_str     0x00000000      0x12f toascii.o
+ .comment       0x00000000       0x71 toascii.o
+ .ARM.attributes
+                0x00000000       0x33 toascii.o
+ .debug_frame   0x00000000       0x20 toascii.o
+ .text          0x00000000        0x0 tolower.o
+ .data          0x00000000        0x0 tolower.o
+ .bss           0x00000000        0x0 tolower.o
+ .text.tolower  0x00000000       0x14 tolower.o
+ .debug_info    0x00000000       0x81 tolower.o
+ .debug_abbrev  0x00000000       0x7d tolower.o
+ .debug_loc     0x00000000       0x3e tolower.o
+ .debug_aranges
+                0x00000000       0x20 tolower.o
+ .debug_ranges  0x00000000       0x10 tolower.o
+ .debug_line    0x00000000       0x6d tolower.o
+ .debug_str     0x00000000      0x137 tolower.o
+ .comment       0x00000000       0x71 tolower.o
+ .ARM.attributes
+                0x00000000       0x33 tolower.o
+ .debug_frame   0x00000000       0x28 tolower.o
+ .text          0x00000000        0x0 toupper.o
+ .data          0x00000000        0x0 toupper.o
+ .bss           0x00000000        0x0 toupper.o
+ .text.toupper  0x00000000       0x14 toupper.o
+ .debug_info    0x00000000       0x81 toupper.o
+ .debug_abbrev  0x00000000       0x7d toupper.o
+ .debug_loc     0x00000000       0x3e toupper.o
+ .debug_aranges
+                0x00000000       0x20 toupper.o
+ .debug_ranges  0x00000000       0x10 toupper.o
+ .debug_line    0x00000000       0x6d toupper.o
+ .debug_str     0x00000000      0x137 toupper.o
+ .comment       0x00000000       0x71 toupper.o
+ .ARM.attributes
+                0x00000000       0x33 toupper.o
+ .debug_frame   0x00000000       0x28 toupper.o
+ .text          0x00000000        0x0 fclose.o
+ .data          0x00000000        0x0 fclose.o
+ .bss           0x00000000        0x0 fclose.o
+ .text.fclose   0x00000000        0x4 fclose.o
+ .debug_info    0x00000000      0x132 fclose.o
+ .debug_abbrev  0x00000000       0xca fclose.o
+ .debug_loc     0x00000000       0x21 fclose.o
+ .debug_aranges
+                0x00000000       0x20 fclose.o
+ .debug_ranges  0x00000000       0x10 fclose.o
+ .debug_line    0x00000000       0x62 fclose.o
+ .debug_str     0x00000000      0x1d2 fclose.o
+ .comment       0x00000000       0x71 fclose.o
+ .ARM.attributes
+                0x00000000       0x33 fclose.o
+ .debug_frame   0x00000000       0x20 fclose.o
+ .text          0x00000000        0x0 fflush.o
+ .data          0x00000000        0x0 fflush.o
+ .bss           0x00000000        0x0 fflush.o
+ .text.fflush   0x00000000        0x4 fflush.o
+ .debug_info    0x00000000      0x10c fflush.o
+ .debug_abbrev  0x00000000       0x9d fflush.o
+ .debug_loc     0x00000000       0x21 fflush.o
+ .debug_aranges
+                0x00000000       0x20 fflush.o
+ .debug_ranges  0x00000000       0x10 fflush.o
+ .debug_line    0x00000000       0x65 fflush.o
+ .debug_str     0x00000000      0x1ca fflush.o
+ .comment       0x00000000       0x71 fflush.o
+ .ARM.attributes
+                0x00000000       0x33 fflush.o
+ .debug_frame   0x00000000       0x20 fflush.o
+ .text          0x00000000        0x0 fgetc.o
+ .data          0x00000000        0x0 fgetc.o
+ .bss           0x00000000        0x0 fgetc.o
+ .text.fgetc    0x00000000       0x12 fgetc.o
+ .debug_info    0x00000000      0x12c fgetc.o
+ .debug_abbrev  0x00000000       0xc1 fgetc.o
+ .debug_loc     0x00000000       0x41 fgetc.o
+ .debug_aranges
+                0x00000000       0x20 fgetc.o
+ .debug_ranges  0x00000000       0x10 fgetc.o
+ .debug_line    0x00000000       0x63 fgetc.o
+ .debug_str     0x00000000      0x1c8 fgetc.o
+ .comment       0x00000000       0x71 fgetc.o
+ .ARM.attributes
+                0x00000000       0x33 fgetc.o
+ .debug_frame   0x00000000       0x2c fgetc.o
+ .text          0x00000000        0x0 fgetlen.o
+ .data          0x00000000        0x0 fgetlen.o
+ .bss           0x00000000        0x0 fgetlen.o
+ .text.fgetlen  0x00000000        0x6 fgetlen.o
+ .debug_info    0x00000000      0x10c fgetlen.o
+ .debug_abbrev  0x00000000       0x9d fgetlen.o
+ .debug_loc     0x00000000       0x21 fgetlen.o
+ .debug_aranges
+                0x00000000       0x20 fgetlen.o
+ .debug_ranges  0x00000000       0x10 fgetlen.o
+ .debug_line    0x00000000       0x63 fgetlen.o
+ .debug_str     0x00000000      0x1cc fgetlen.o
+ .comment       0x00000000       0x71 fgetlen.o
+ .ARM.attributes
+                0x00000000       0x33 fgetlen.o
+ .debug_frame   0x00000000       0x20 fgetlen.o
+ .text          0x00000000        0x0 fgets.o
+ .data          0x00000000        0x0 fgets.o
+ .bss           0x00000000        0x0 fgets.o
+ .text.fgets    0x00000000       0x36 fgets.o
+ .debug_info    0x00000000      0x155 fgets.o
+ .debug_abbrev  0x00000000       0xd0 fgets.o
+ .debug_loc     0x00000000       0xb1 fgets.o
+ .debug_aranges
+                0x00000000       0x20 fgets.o
+ .debug_ranges  0x00000000       0x10 fgets.o
+ .debug_line    0x00000000       0x71 fgets.o
+ .debug_str     0x00000000      0x1ce fgets.o
+ .comment       0x00000000       0x71 fgets.o
+ .ARM.attributes
+                0x00000000       0x33 fgets.o
+ .debug_frame   0x00000000       0x34 fgets.o
+ .text          0x00000000        0x0 fopen.o
+ .data          0x00000000        0x0 fopen.o
+ .bss           0x00000000        0x0 fopen.o
+ .text.fopen    0x00000000        0x4 fopen.o
+ .debug_info    0x00000000      0x159 fopen.o
+ .debug_abbrev  0x00000000       0xd1 fopen.o
+ .debug_loc     0x00000000       0x42 fopen.o
+ .debug_aranges
+                0x00000000       0x20 fopen.o
+ .debug_ranges  0x00000000       0x10 fopen.o
+ .debug_line    0x00000000       0x62 fopen.o
+ .debug_str     0x00000000      0x1db fopen.o
+ .comment       0x00000000       0x71 fopen.o
+ .ARM.attributes
+                0x00000000       0x33 fopen.o
+ .debug_frame   0x00000000       0x20 fopen.o
+ .text          0x00000000        0x0 fputc.o
+ .data          0x00000000        0x0 fputc.o
+ .bss           0x00000000        0x0 fputc.o
+ .text.fputc    0x00000000       0x16 fputc.o
+ .debug_info    0x00000000      0x12b fputc.o
+ .debug_abbrev  0x00000000       0xb2 fputc.o
+ .debug_loc     0x00000000       0x78 fputc.o
+ .debug_aranges
+                0x00000000       0x20 fputc.o
+ .debug_ranges  0x00000000       0x10 fputc.o
+ .debug_line    0x00000000       0x64 fputc.o
+ .debug_str     0x00000000      0x1c8 fputc.o
+ .comment       0x00000000       0x71 fputc.o
+ .ARM.attributes
+                0x00000000       0x33 fputc.o
+ .debug_frame   0x00000000       0x2c fputc.o
+ .text          0x00000000        0x0 fputs.o
+ .data          0x00000000        0x0 fputs.o
+ .bss           0x00000000        0x0 fputs.o
+ .text.fputs    0x00000000       0x1c fputs.o
+ .debug_info    0x00000000      0x154 fputs.o
+ .debug_abbrev  0x00000000       0xd7 fputs.o
+ .debug_loc     0x00000000       0xca fputs.o
+ .debug_aranges
+                0x00000000       0x20 fputs.o
+ .debug_ranges  0x00000000       0x10 fputs.o
+ .debug_line    0x00000000       0x6a fputs.o
+ .debug_str     0x00000000      0x1cf fputs.o
+ .comment       0x00000000       0x71 fputs.o
+ .ARM.attributes
+                0x00000000       0x33 fputs.o
+ .debug_frame   0x00000000       0x2c fputs.o
+ .text          0x00000000        0x0 getc.o
+ .data          0x00000000        0x0 getc.o
+ .bss           0x00000000        0x0 getc.o
+ .text.getc     0x00000000        0x4 getc.o
+ .debug_info    0x00000000      0x132 getc.o
+ .debug_abbrev  0x00000000       0xca getc.o
+ .debug_loc     0x00000000       0x21 getc.o
+ .debug_aranges
+                0x00000000       0x20 getc.o
+ .debug_ranges  0x00000000       0x10 getc.o
+ .debug_line    0x00000000       0x61 getc.o
+ .debug_str     0x00000000      0x1cc getc.o
+ .comment       0x00000000       0x71 getc.o
+ .ARM.attributes
+                0x00000000       0x33 getc.o
+ .debug_frame   0x00000000       0x20 getc.o
+ .text          0x00000000        0x0 getchar.o
+ .data          0x00000000        0x0 getchar.o
+ .bss           0x00000000        0x0 getchar.o
+ .text.getchar  0x00000000        0xc getchar.o
+ .debug_info    0x00000000      0x129 getchar.o
+ .debug_abbrev  0x00000000       0xc0 getchar.o
+ .debug_aranges
+                0x00000000       0x20 getchar.o
+ .debug_ranges  0x00000000       0x10 getchar.o
+ .debug_line    0x00000000       0x64 getchar.o
+ .debug_str     0x00000000      0x1d8 getchar.o
+ .comment       0x00000000       0x71 getchar.o
+ .ARM.attributes
+                0x00000000       0x33 getchar.o
+ .debug_frame   0x00000000       0x20 getchar.o
+ .text          0x00000000        0x0 gets.o
+ .data          0x00000000        0x0 gets.o
+ .bss           0x00000000        0x0 gets.o
+ .text.gets     0x00000000       0x3c gets.o
+ .debug_info    0x00000000      0x15a gets.o
+ .debug_abbrev  0x00000000       0xec gets.o
+ .debug_loc     0x00000000       0x8a gets.o
+ .debug_aranges
+                0x00000000       0x20 gets.o
+ .debug_ranges  0x00000000       0x10 gets.o
+ .debug_line    0x00000000       0x71 gets.o
+ .debug_str     0x00000000      0x1cc gets.o
+ .comment       0x00000000       0x71 gets.o
+ .ARM.attributes
+                0x00000000       0x33 gets.o
+ .debug_frame   0x00000000       0x30 gets.o
+ .text          0x00000000        0x0 printf.o
+ .data          0x00000000        0x0 printf.o
+ .bss           0x00000000        0x0 printf.o
+ .text.printchar.isra.0
+                0x00000000       0x20 printf.o
+ .text.prints   0x00000000       0x92 printf.o
+ .text.printi   0x00000000       0xac printf.o
+ .text.print    0x00000000      0x140 printf.o
+ .text.printf   0x00000000       0x24 printf.o
+ .text.fprintf  0x00000000       0x1c printf.o
+ .text.sprintf  0x00000000       0x20 printf.o
+ .text          0x00000000        0x0 putc.o
+ .data          0x00000000        0x0 putc.o
+ .bss           0x00000000        0x0 putc.o
+ .text.putc     0x00000000        0x4 putc.o
+ .debug_info    0x00000000      0x14b putc.o
+ .debug_abbrev  0x00000000       0xca putc.o
+ .debug_loc     0x00000000       0x42 putc.o
+ .debug_aranges
+                0x00000000       0x20 putc.o
+ .debug_ranges  0x00000000       0x10 putc.o
+ .debug_line    0x00000000       0x61 putc.o
+ .debug_str     0x00000000      0x1cc putc.o
+ .comment       0x00000000       0x71 putc.o
+ .ARM.attributes
+                0x00000000       0x33 putc.o
+ .debug_frame   0x00000000       0x20 putc.o
+ .text          0x00000000        0x0 putchar.o
+ .data          0x00000000        0x0 putchar.o
+ .bss           0x00000000        0x0 putchar.o
+ .text.putchar  0x00000000        0xc putchar.o
+ .debug_info    0x00000000      0x143 putchar.o
+ .debug_abbrev  0x00000000       0xdb putchar.o
+ .debug_loc     0x00000000       0x21 putchar.o
+ .debug_aranges
+                0x00000000       0x20 putchar.o
+ .debug_ranges  0x00000000       0x10 putchar.o
+ .debug_line    0x00000000       0x64 putchar.o
+ .debug_str     0x00000000      0x1d9 putchar.o
+ .comment       0x00000000       0x71 putchar.o
+ .ARM.attributes
+                0x00000000       0x33 putchar.o
+ .debug_frame   0x00000000       0x20 putchar.o
+ .text          0x00000000        0x0 puts.o
+ .data          0x00000000        0x0 puts.o
+ .bss           0x00000000        0x0 puts.o
+ .text.puts     0x00000000       0x1c puts.o
+ .debug_info    0x00000000      0x15b puts.o
+ .debug_abbrev  0x00000000       0xed puts.o
+ .debug_loc     0x00000000       0x4c puts.o
+ .debug_aranges
+                0x00000000       0x20 puts.o
+ .debug_ranges  0x00000000       0x10 puts.o
+ .debug_line    0x00000000       0x70 puts.o
+ .debug_str     0x00000000      0x1d4 puts.o
+ .comment       0x00000000       0x71 puts.o
+ .ARM.attributes
+                0x00000000       0x33 puts.o
+ .debug_frame   0x00000000       0x2c puts.o
+ .text          0x00000000        0x0 rget.o
+ .data          0x00000000        0x0 rget.o
+ .bss           0x00000000        0x0 rget.o
+ .text.__srget_r
+                0x00000000       0x12 rget.o
+ .text.__srget  0x00000000       0x12 rget.o
+ .debug_info    0x00000000      0x1a0 rget.o
+ .debug_abbrev  0x00000000       0xdb rget.o
+ .debug_loc     0x00000000       0xa3 rget.o
+ .debug_aranges
+                0x00000000       0x28 rget.o
+ .debug_ranges  0x00000000       0x18 rget.o
+ .debug_line    0x00000000       0x7d rget.o
+ .debug_str     0x00000000      0x1e6 rget.o
+ .comment       0x00000000       0x71 rget.o
+ .ARM.attributes
+                0x00000000       0x33 rget.o
+ .debug_frame   0x00000000       0x48 rget.o
+ .text          0x00000000        0x0 scanf.o
+ .data          0x00000000        0x0 scanf.o
+ .bss           0x00000000        0x0 scanf.o
+ .text.scan_string.part.0
+                0x00000000       0x20 scanf.o
+ .text.scan_string
+                0x00000000       0x30 scanf.o
+ .text.sscanf   0x00000000       0x9a scanf.o
+ .text.fscanf   0x00000000        0xa scanf.o
+ .text.scanf    0x00000000        0xa scanf.o
+ .debug_info    0x00000000      0x3ba scanf.o
+ .debug_abbrev  0x00000000      0x1f8 scanf.o
+ .debug_loc     0x00000000      0x267 scanf.o
+ .debug_aranges
+                0x00000000       0x40 scanf.o
+ .debug_ranges  0x00000000       0x30 scanf.o
+ .debug_line    0x00000000      0x10e scanf.o
+ .debug_str     0x00000000      0x241 scanf.o
+ .comment       0x00000000       0x71 scanf.o
+ .ARM.attributes
+                0x00000000       0x33 scanf.o
+ .debug_frame   0x00000000       0xac scanf.o
+ .text          0x00000000        0x0 setbuffer.o
+ .data          0x00000000        0x0 setbuffer.o
+ .bss           0x00000000        0x0 setbuffer.o
+ .text.setbuffer
+                0x00000000        0x2 setbuffer.o
+ .debug_info    0x00000000      0x12b setbuffer.o
+ .debug_abbrev  0x00000000       0xaa setbuffer.o
+ .debug_aranges
+                0x00000000       0x20 setbuffer.o
+ .debug_ranges  0x00000000       0x10 setbuffer.o
+ .debug_line    0x00000000       0x70 setbuffer.o
+ .debug_str     0x00000000      0x1dc setbuffer.o
+ .comment       0x00000000       0x71 setbuffer.o
+ .ARM.attributes
+                0x00000000       0x33 setbuffer.o
+ .debug_frame   0x00000000       0x20 setbuffer.o
+ .text          0x00000000        0x0 wbuf.o
+ .data          0x00000000        0x0 wbuf.o
+ .bss           0x00000000        0x0 wbuf.o
+ .text.__swbuf_r
+                0x00000000       0x16 wbuf.o
+ .debug_info    0x00000000      0x167 wbuf.o
+ .debug_abbrev  0x00000000       0xc1 wbuf.o
+ .debug_loc     0x00000000       0x83 wbuf.o
+ .debug_aranges
+                0x00000000       0x20 wbuf.o
+ .debug_ranges  0x00000000       0x10 wbuf.o
+ .debug_line    0x00000000       0x6d wbuf.o
+ .debug_str     0x00000000      0x1de wbuf.o
+ .comment       0x00000000       0x71 wbuf.o
+ .ARM.attributes
+                0x00000000       0x33 wbuf.o
+ .debug_frame   0x00000000       0x2c wbuf.o
+ .text          0x00000000        0x0 abs.o
+ .data          0x00000000        0x0 abs.o
+ .bss           0x00000000        0x0 abs.o
+ .text.abs      0x00000000        0x8 abs.o
+ .debug_info    0x00000000       0x90 abs.o
+ .debug_abbrev  0x00000000       0x55 abs.o
+ .debug_loc     0x00000000       0x21 abs.o
+ .debug_aranges
+                0x00000000       0x20 abs.o
+ .debug_ranges  0x00000000       0x10 abs.o
+ .debug_line    0x00000000       0x45 abs.o
+ .debug_str     0x00000000      0x196 abs.o
+ .comment       0x00000000       0x71 abs.o
+ .ARM.attributes
+                0x00000000       0x33 abs.o
+ .debug_frame   0x00000000       0x20 abs.o
+ .text          0x00000000        0x0 assert.o
+ .data          0x00000000        0x0 assert.o
+ .bss           0x00000000        0x0 assert.o
+ .text.__assert_func
+                0x00000000       0x34 assert.o
+ .text.__assert
+                0x00000000        0xa assert.o
+ .text          0x00000000        0x0 atoi.o
+ .data          0x00000000        0x0 atoi.o
+ .bss           0x00000000        0x0 atoi.o
+ .text.atoi     0x00000000        0x8 atoi.o
+ .debug_info    0x00000000       0xf0 atoi.o
+ .debug_abbrev  0x00000000       0x9d atoi.o
+ .debug_loc     0x00000000       0x21 atoi.o
+ .debug_aranges
+                0x00000000       0x20 atoi.o
+ .debug_ranges  0x00000000       0x10 atoi.o
+ .debug_line    0x00000000       0x63 atoi.o
+ .debug_str     0x00000000      0x1a8 atoi.o
+ .comment       0x00000000       0x71 atoi.o
+ .ARM.attributes
+                0x00000000       0x33 atoi.o
+ .debug_frame   0x00000000       0x20 atoi.o
+ .text          0x00000000        0x0 atol.o
+ .data          0x00000000        0x0 atol.o
+ .bss           0x00000000        0x0 atol.o
+ .text.atol     0x00000000        0x8 atol.o
+ .text.atoll    0x00000000        0xe atol.o
+ .debug_info    0x00000000      0x137 atol.o
+ .debug_abbrev  0x00000000       0xc4 atol.o
+ .debug_loc     0x00000000       0x62 atol.o
+ .debug_aranges
+                0x00000000       0x28 atol.o
+ .debug_ranges  0x00000000       0x18 atol.o
+ .debug_line    0x00000000       0x73 atol.o
+ .debug_str     0x00000000      0x1ae atol.o
+ .comment       0x00000000       0x71 atol.o
+ .ARM.attributes
+                0x00000000       0x33 atol.o
+ .debug_frame   0x00000000       0x38 atol.o
+ .text          0x00000000        0x0 calloc.o
+ .data          0x00000000        0x0 calloc.o
+ .bss           0x00000000        0x0 calloc.o
+ .text.calloc   0x00000000        0x6 calloc.o
+ .debug_info    0x00000000       0xcf calloc.o
+ .debug_abbrev  0x00000000       0xa1 calloc.o
+ .debug_loc     0x00000000       0x42 calloc.o
+ .debug_aranges
+                0x00000000       0x20 calloc.o
+ .debug_ranges  0x00000000       0x10 calloc.o
+ .debug_line    0x00000000       0x48 calloc.o
+ .debug_str     0x00000000      0x1ad calloc.o
+ .comment       0x00000000       0x71 calloc.o
+ .ARM.attributes
+                0x00000000       0x33 calloc.o
+ .debug_frame   0x00000000       0x20 calloc.o
+ .text          0x00000000        0x0 div.o
+ .data          0x00000000        0x0 div.o
+ .bss           0x00000000        0x0 div.o
+ .text.div      0x00000000       0x28 div.o
+ .debug_info    0x00000000       0xdb div.o
+ .debug_abbrev  0x00000000       0xab div.o
+ .debug_loc     0x00000000       0x87 div.o
+ .debug_aranges
+                0x00000000       0x20 div.o
+ .debug_ranges  0x00000000       0x10 div.o
+ .debug_line    0x00000000       0x85 div.o
+ .debug_str     0x00000000      0x1a7 div.o
+ .comment       0x00000000       0x71 div.o
+ .ARM.attributes
+                0x00000000       0x33 div.o
+ .debug_frame   0x00000000       0x28 div.o
+ .text          0x00000000        0x0 exit.o
+ .data          0x00000000        0x0 exit.o
+ .bss           0x00000000        0x0 exit.o
+ .text.exit     0x00000000        0x8 exit.o
+ .debug_info    0x00000000       0xb4 exit.o
+ .debug_abbrev  0x00000000       0x84 exit.o
+ .debug_loc     0x00000000       0x41 exit.o
+ .debug_aranges
+                0x00000000       0x20 exit.o
+ .debug_ranges  0x00000000       0x10 exit.o
+ .debug_line    0x00000000       0x46 exit.o
+ .debug_str     0x00000000      0x1a7 exit.o
+ .comment       0x00000000       0x71 exit.o
+ .ARM.attributes
+                0x00000000       0x33 exit.o
+ .debug_frame   0x00000000       0x28 exit.o
+ .text          0x00000000        0x0 ldiv.o
+ .data          0x00000000        0x0 ldiv.o
+ .bss           0x00000000        0x0 ldiv.o
+ .text.ldiv     0x00000000       0x28 ldiv.o
+ .debug_info    0x00000000       0xdb ldiv.o
+ .debug_abbrev  0x00000000       0xab ldiv.o
+ .debug_loc     0x00000000       0x87 ldiv.o
+ .debug_aranges
+                0x00000000       0x20 ldiv.o
+ .debug_ranges  0x00000000       0x10 ldiv.o
+ .debug_line    0x00000000       0x80 ldiv.o
+ .debug_str     0x00000000      0x1ae ldiv.o
+ .comment       0x00000000       0x71 ldiv.o
+ .ARM.attributes
+                0x00000000       0x33 ldiv.o
+ .debug_frame   0x00000000       0x28 ldiv.o
+ .text          0x00000000        0x0 malloc.o
+ .data          0x00000000        0x0 malloc.o
+ .bss           0x00000000        0x0 malloc.o
+ .text.malloc   0x00000000        0x4 malloc.o
+ .text.free     0x00000000        0x4 malloc.o
+ .debug_info    0x00000000      0x10d malloc.o
+ .debug_abbrev  0x00000000       0xbf malloc.o
+ .debug_loc     0x00000000       0x42 malloc.o
+ .debug_aranges
+                0x00000000       0x28 malloc.o
+ .debug_ranges  0x00000000       0x18 malloc.o
+ .debug_line    0x00000000       0x5a malloc.o
+ .debug_str     0x00000000      0x1bf malloc.o
+ .comment       0x00000000       0x71 malloc.o
+ .ARM.attributes
+                0x00000000       0x33 malloc.o
+ .debug_frame   0x00000000       0x30 malloc.o
+ .text          0x00000000        0x0 rand.o
+ .data          0x00000000        0x0 rand.o
+ .bss           0x00000000        0x0 rand.o
+ .text.rand     0x00000000       0x20 rand.o
+ .text.srand    0x00000000        0xc rand.o
+ .data.next     0x00000000        0x4 rand.o
+ .debug_info    0x00000000       0xc1 rand.o
+ .debug_abbrev  0x00000000       0x7e rand.o
+ .debug_aranges
+                0x00000000       0x28 rand.o
+ .debug_ranges  0x00000000       0x18 rand.o
+ .debug_line    0x00000000       0x59 rand.o
+ .debug_str     0x00000000      0x1be rand.o
+ .comment       0x00000000       0x71 rand.o
+ .ARM.attributes
+                0x00000000       0x33 rand.o
+ .debug_frame   0x00000000       0x30 rand.o
+ .text          0x00000000        0x0 strtol.o
+ .data          0x00000000        0x0 strtol.o
+ .bss           0x00000000        0x0 strtol.o
+ .text          0x00000000        0x0 bcmp.o
+ .data          0x00000000        0x0 bcmp.o
+ .bss           0x00000000        0x0 bcmp.o
+ .text.bcmp     0x00000000        0x4 bcmp.o
+ .debug_info    0x00000000       0xee bcmp.o
+ .debug_abbrev  0x00000000       0x99 bcmp.o
+ .debug_loc     0x00000000       0x63 bcmp.o
+ .debug_aranges
+                0x00000000       0x20 bcmp.o
+ .debug_ranges  0x00000000       0x10 bcmp.o
+ .debug_line    0x00000000       0x62 bcmp.o
+ .debug_str     0x00000000      0x19a bcmp.o
+ .comment       0x00000000       0x71 bcmp.o
+ .ARM.attributes
+                0x00000000       0x33 bcmp.o
+ .debug_frame   0x00000000       0x20 bcmp.o
+ .text          0x00000000        0x0 bcopy.o
+ .data          0x00000000        0x0 bcopy.o
+ .bss           0x00000000        0x0 bcopy.o
+ .text.bcopy    0x00000000        0xa bcopy.o
+ .debug_info    0x00000000       0xee bcopy.o
+ .debug_abbrev  0x00000000       0xad bcopy.o
+ .debug_loc     0x00000000       0x79 bcopy.o
+ .debug_aranges
+                0x00000000       0x20 bcopy.o
+ .debug_ranges  0x00000000       0x10 bcopy.o
+ .debug_line    0x00000000       0x64 bcopy.o
+ .debug_str     0x00000000      0x1a4 bcopy.o
+ .comment       0x00000000       0x71 bcopy.o
+ .ARM.attributes
+                0x00000000       0x33 bcopy.o
+ .debug_frame   0x00000000       0x20 bcopy.o
+ .text          0x00000000        0x0 bzero.o
+ .data          0x00000000        0x0 bzero.o
+ .bss           0x00000000        0x0 bzero.o
+ .text.bzero    0x00000000       0x10 bzero.o
+ .debug_info    0x00000000       0xb6 bzero.o
+ .debug_abbrev  0x00000000       0x83 bzero.o
+ .debug_loc     0x00000000       0x6f bzero.o
+ .debug_aranges
+                0x00000000       0x20 bzero.o
+ .debug_ranges  0x00000000       0x10 bzero.o
+ .debug_line    0x00000000       0x4d bzero.o
+ .debug_str     0x00000000      0x1a1 bzero.o
+ .comment       0x00000000       0x71 bzero.o
+ .ARM.attributes
+                0x00000000       0x33 bzero.o
+ .debug_frame   0x00000000       0x20 bzero.o
+ .text          0x00000000        0x0 index.o
+ .data          0x00000000        0x0 index.o
+ .bss           0x00000000        0x0 index.o
+ .text          0x00000000        0x0 memccpy.o
+ .data          0x00000000        0x0 memccpy.o
+ .bss           0x00000000        0x0 memccpy.o
+ .text.memccpy  0x00000000       0x5c memccpy.o
+ .debug_info    0x00000000      0x1a3 memccpy.o
+ .debug_abbrev  0x00000000       0xa9 memccpy.o
+ .debug_loc     0x00000000      0x22b memccpy.o
+ .debug_aranges
+                0x00000000       0x20 memccpy.o
+ .debug_ranges  0x00000000       0x10 memccpy.o
+ .debug_line    0x00000000       0x7f memccpy.o
+ .debug_str     0x00000000      0x1fd memccpy.o
+ .comment       0x00000000       0x71 memccpy.o
+ .ARM.attributes
+                0x00000000       0x33 memccpy.o
+ .debug_frame   0x00000000       0x30 memccpy.o
+ .text          0x00000000        0x0 memchr.o
+ .data          0x00000000        0x0 memchr.o
+ .bss           0x00000000        0x0 memchr.o
+ .text.memchr   0x00000000       0x60 memchr.o
+ .debug_info    0x00000000      0x112 memchr.o
+ .debug_abbrev  0x00000000       0xaf memchr.o
+ .debug_loc     0x00000000      0x183 memchr.o
+ .debug_aranges
+                0x00000000       0x20 memchr.o
+ .debug_ranges  0x00000000       0x10 memchr.o
+ .debug_line    0x00000000       0x68 memchr.o
+ .debug_str     0x00000000      0x1c3 memchr.o
+ .comment       0x00000000       0x71 memchr.o
+ .ARM.attributes
+                0x00000000       0x33 memchr.o
+ .debug_frame   0x00000000       0x2c memchr.o
+ .text          0x00000000        0x0 memcmp.o
+ .data          0x00000000        0x0 memcmp.o
+ .bss           0x00000000        0x0 memcmp.o
+ .text          0x00000000        0x0 memcpy.o
+ .data          0x00000000        0x0 memcpy.o
+ .bss           0x00000000        0x0 memcpy.o
+ .text          0x00000000        0x0 memmove.o
+ .data          0x00000000        0x0 memmove.o
+ .bss           0x00000000        0x0 memmove.o
+ .text.memmove  0x00000000       0x8e memmove.o
+ .debug_info    0x00000000      0x130 memmove.o
+ .debug_abbrev  0x00000000       0xa0 memmove.o
+ .debug_loc     0x00000000      0x2fd memmove.o
+ .debug_aranges
+                0x00000000       0x20 memmove.o
+ .debug_ranges  0x00000000       0x10 memmove.o
+ .debug_line    0x00000000       0x84 memmove.o
+ .debug_str     0x00000000      0x1d8 memmove.o
+ .comment       0x00000000       0x71 memmove.o
+ .ARM.attributes
+                0x00000000       0x33 memmove.o
+ .debug_frame   0x00000000       0x2c memmove.o
+ .text          0x00000000        0x0 mempcpy.o
+ .data          0x00000000        0x0 mempcpy.o
+ .bss           0x00000000        0x0 mempcpy.o
+ .text.mempcpy  0x00000000       0x6a mempcpy.o
+ .debug_info    0x00000000      0x132 mempcpy.o
+ .debug_abbrev  0x00000000       0x91 mempcpy.o
+ .debug_loc     0x00000000      0x253 mempcpy.o
+ .debug_aranges
+                0x00000000       0x20 mempcpy.o
+ .debug_ranges  0x00000000       0x10 mempcpy.o
+ .debug_line    0x00000000       0x7b mempcpy.o
+ .debug_str     0x00000000      0x1ce mempcpy.o
+ .comment       0x00000000       0x71 mempcpy.o
+ .ARM.attributes
+                0x00000000       0x33 mempcpy.o
+ .debug_frame   0x00000000       0x2c mempcpy.o
+ .text          0x00000000        0x0 memset.o
+ .data          0x00000000        0x0 memset.o
+ .bss           0x00000000        0x0 memset.o
+ .text          0x00000000        0x0 rindex.o
+ .data          0x00000000        0x0 rindex.o
+ .bss           0x00000000        0x0 rindex.o
+ .text.rindex   0x00000000        0x4 rindex.o
+ .debug_info    0x00000000       0xe4 rindex.o
+ .debug_abbrev  0x00000000       0x9b rindex.o
+ .debug_loc     0x00000000       0x42 rindex.o
+ .debug_aranges
+                0x00000000       0x20 rindex.o
+ .debug_ranges  0x00000000       0x10 rindex.o
+ .debug_line    0x00000000       0x64 rindex.o
+ .debug_str     0x00000000      0x1a4 rindex.o
+ .comment       0x00000000       0x71 rindex.o
+ .ARM.attributes
+                0x00000000       0x33 rindex.o
+ .debug_frame   0x00000000       0x20 rindex.o
+ .text          0x00000000        0x0 strcat.o
+ .data          0x00000000        0x0 strcat.o
+ .bss           0x00000000        0x0 strcat.o
+ .text.strcat   0x00000000       0x36 strcat.o
+ .debug_info    0x00000000      0x10e strcat.o
+ .debug_abbrev  0x00000000       0xb5 strcat.o
+ .debug_loc     0x00000000       0xa6 strcat.o
+ .debug_aranges
+                0x00000000       0x20 strcat.o
+ .debug_ranges  0x00000000       0x10 strcat.o
+ .debug_line    0x00000000       0x7a strcat.o
+ .debug_str     0x00000000      0x1c0 strcat.o
+ .comment       0x00000000       0x71 strcat.o
+ .ARM.attributes
+                0x00000000       0x33 strcat.o
+ .debug_frame   0x00000000       0x2c strcat.o
+ .text          0x00000000        0x0 strchr.o
+ .data          0x00000000        0x0 strchr.o
+ .bss           0x00000000        0x0 strchr.o
+ .text          0x00000000        0x0 strcmp.o
+ .data          0x00000000        0x0 strcmp.o
+ .bss           0x00000000        0x0 strcmp.o
+ .text.strcmp   0x00000000       0x4c strcmp.o
+ .debug_info    0x00000000       0xd8 strcmp.o
+ .debug_abbrev  0x00000000       0x76 strcmp.o
+ .debug_loc     0x00000000       0xe4 strcmp.o
+ .debug_aranges
+                0x00000000       0x20 strcmp.o
+ .debug_ranges  0x00000000       0x10 strcmp.o
+ .debug_line    0x00000000       0x6a strcmp.o
+ .debug_str     0x00000000      0x1ae strcmp.o
+ .comment       0x00000000       0x71 strcmp.o
+ .ARM.attributes
+                0x00000000       0x33 strcmp.o
+ .debug_frame   0x00000000       0x2c strcmp.o
+ .text          0x00000000        0x0 strcoll.o
+ .data          0x00000000        0x0 strcoll.o
+ .bss           0x00000000        0x0 strcoll.o
+ .text.strcoll  0x00000000        0x4 strcoll.o
+ .debug_info    0x00000000       0xde strcoll.o
+ .debug_abbrev  0x00000000       0x9b strcoll.o
+ .debug_loc     0x00000000       0x42 strcoll.o
+ .debug_aranges
+                0x00000000       0x20 strcoll.o
+ .debug_ranges  0x00000000       0x10 strcoll.o
+ .debug_line    0x00000000       0x65 strcoll.o
+ .debug_str     0x00000000      0x1a5 strcoll.o
+ .comment       0x00000000       0x71 strcoll.o
+ .ARM.attributes
+                0x00000000       0x33 strcoll.o
+ .debug_frame   0x00000000       0x20 strcoll.o
+ .text          0x00000000        0x0 strcpy.o
+ .data          0x00000000        0x0 strcpy.o
+ .bss           0x00000000        0x0 strcpy.o
+ .text          0x00000000        0x0 strcspn.o
+ .data          0x00000000        0x0 strcspn.o
+ .bss           0x00000000        0x0 strcspn.o
+ .text.strcspn  0x00000000       0x20 strcspn.o
+ .debug_info    0x00000000       0xc7 strcspn.o
+ .debug_abbrev  0x00000000       0x85 strcspn.o
+ .debug_loc     0x00000000       0x95 strcspn.o
+ .debug_aranges
+                0x00000000       0x20 strcspn.o
+ .debug_ranges  0x00000000       0x10 strcspn.o
+ .debug_line    0x00000000       0x58 strcspn.o
+ .debug_str     0x00000000      0x19e strcspn.o
+ .comment       0x00000000       0x71 strcspn.o
+ .ARM.attributes
+                0x00000000       0x33 strcspn.o
+ .debug_frame   0x00000000       0x2c strcspn.o
+ .text          0x00000000        0x0 strlcat.o
+ .data          0x00000000        0x0 strlcat.o
+ .bss           0x00000000        0x0 strlcat.o
+ .text.strlcat  0x00000000       0x48 strlcat.o
+ .debug_info    0x00000000      0x121 strlcat.o
+ .debug_abbrev  0x00000000       0xb6 strlcat.o
+ .debug_loc     0x00000000      0x1d9 strlcat.o
+ .debug_aranges
+                0x00000000       0x20 strlcat.o
+ .debug_ranges  0x00000000       0x10 strlcat.o
+ .debug_line    0x00000000       0x81 strlcat.o
+ .debug_str     0x00000000      0x1aa strlcat.o
+ .comment       0x00000000       0x71 strlcat.o
+ .ARM.attributes
+                0x00000000       0x33 strlcat.o
+ .debug_frame   0x00000000       0x2c strlcat.o
+ .text          0x00000000        0x0 strlcpy.o
+ .data          0x00000000        0x0 strlcpy.o
+ .bss           0x00000000        0x0 strlcpy.o
+ .text.strlcpy  0x00000000       0x2a strlcpy.o
+ .debug_info    0x00000000       0xeb strlcpy.o
+ .debug_abbrev  0x00000000       0x85 strlcpy.o
+ .debug_loc     0x00000000      0x111 strlcpy.o
+ .debug_aranges
+                0x00000000       0x20 strlcpy.o
+ .debug_ranges  0x00000000       0x10 strlcpy.o
+ .debug_line    0x00000000       0x59 strlcpy.o
+ .debug_str     0x00000000      0x19e strlcpy.o
+ .comment       0x00000000       0x71 strlcpy.o
+ .ARM.attributes
+                0x00000000       0x33 strlcpy.o
+ .debug_frame   0x00000000       0x28 strlcpy.o
+ .text          0x00000000        0x0 strlen.o
+ .data          0x00000000        0x0 strlen.o
+ .bss           0x00000000        0x0 strlen.o
+ .text.strlen   0x00000000       0x38 strlen.o
+ .debug_info    0x00000000       0xcd strlen.o
+ .debug_abbrev  0x00000000       0x76 strlen.o
+ .debug_loc     0x00000000       0x7d strlen.o
+ .debug_aranges
+                0x00000000       0x20 strlen.o
+ .debug_ranges  0x00000000       0x10 strlen.o
+ .debug_line    0x00000000       0x5b strlen.o
+ .debug_str     0x00000000      0x1c1 strlen.o
+ .comment       0x00000000       0x71 strlen.o
+ .ARM.attributes
+                0x00000000       0x33 strlen.o
+ .debug_frame   0x00000000       0x28 strlen.o
+ .text          0x00000000        0x0 strlwr.o
+ .data          0x00000000        0x0 strlwr.o
+ .bss           0x00000000        0x0 strlwr.o
+ .text.strlwr   0x00000000       0x1a strlwr.o
+ .debug_info    0x00000000       0xcd strlwr.o
+ .debug_abbrev  0x00000000       0x94 strlwr.o
+ .debug_loc     0x00000000       0x81 strlwr.o
+ .debug_aranges
+                0x00000000       0x20 strlwr.o
+ .debug_ranges  0x00000000       0x10 strlwr.o
+ .debug_line    0x00000000       0x6e strlwr.o
+ .debug_str     0x00000000      0x1a4 strlwr.o
+ .comment       0x00000000       0x71 strlwr.o
+ .ARM.attributes
+                0x00000000       0x33 strlwr.o
+ .debug_frame   0x00000000       0x2c strlwr.o
+ .text          0x00000000        0x0 strncat.o
+ .data          0x00000000        0x0 strncat.o
+ .bss           0x00000000        0x0 strncat.o
+ .text.strncat  0x00000000       0x48 strncat.o
+ .debug_info    0x00000000       0xf3 strncat.o
+ .debug_abbrev  0x00000000       0x8e strncat.o
+ .debug_loc     0x00000000       0xd1 strncat.o
+ .debug_aranges
+                0x00000000       0x20 strncat.o
+ .debug_ranges  0x00000000       0x10 strncat.o
+ .debug_line    0x00000000       0x70 strncat.o
+ .debug_str     0x00000000      0x1bb strncat.o
+ .comment       0x00000000       0x71 strncat.o
+ .ARM.attributes
+                0x00000000       0x33 strncat.o
+ .debug_frame   0x00000000       0x2c strncat.o
+ .text          0x00000000        0x0 strncmp.o
+ .data          0x00000000        0x0 strncmp.o
+ .bss           0x00000000        0x0 strncmp.o
+ .text.strncmp  0x00000000       0x68 strncmp.o
+ .debug_info    0x00000000       0xe5 strncmp.o
+ .debug_abbrev  0x00000000       0x76 strncmp.o
+ .debug_loc     0x00000000      0x153 strncmp.o
+ .debug_aranges
+                0x00000000       0x20 strncmp.o
+ .debug_ranges  0x00000000       0x10 strncmp.o
+ .debug_line    0x00000000       0x83 strncmp.o
+ .debug_str     0x00000000      0x1b0 strncmp.o
+ .comment       0x00000000       0x71 strncmp.o
+ .ARM.attributes
+                0x00000000       0x33 strncmp.o
+ .debug_frame   0x00000000       0x2c strncmp.o
+ .text          0x00000000        0x0 strncpy.o
+ .data          0x00000000        0x0 strncpy.o
+ .bss           0x00000000        0x0 strncpy.o
+ .text          0x00000000        0x0 strnlen.o
+ .data          0x00000000        0x0 strnlen.o
+ .bss           0x00000000        0x0 strnlen.o
+ .text.strnlen  0x00000000       0x1a strnlen.o
+ .debug_info    0x00000000       0xbe strnlen.o
+ .debug_abbrev  0x00000000       0x76 strnlen.o
+ .debug_loc     0x00000000       0x7d strnlen.o
+ .debug_aranges
+                0x00000000       0x20 strnlen.o
+ .debug_ranges  0x00000000       0x10 strnlen.o
+ .debug_line    0x00000000       0x53 strnlen.o
+ .debug_str     0x00000000      0x1a4 strnlen.o
+ .comment       0x00000000       0x71 strnlen.o
+ .ARM.attributes
+                0x00000000       0x33 strnlen.o
+ .debug_frame   0x00000000       0x28 strnlen.o
+ .text          0x00000000        0x0 strrchr.o
+ .data          0x00000000        0x0 strrchr.o
+ .bss           0x00000000        0x0 strrchr.o
+ .text.strrchr  0x00000000       0x26 strrchr.o
+ .debug_info    0x00000000       0xf9 strrchr.o
+ .debug_abbrev  0x00000000       0xb7 strrchr.o
+ .debug_loc     0x00000000       0xf0 strrchr.o
+ .debug_aranges
+                0x00000000       0x20 strrchr.o
+ .debug_ranges  0x00000000       0x10 strrchr.o
+ .debug_line    0x00000000       0x71 strrchr.o
+ .debug_str     0x00000000      0x1aa strrchr.o
+ .comment       0x00000000       0x71 strrchr.o
+ .ARM.attributes
+                0x00000000       0x33 strrchr.o
+ .debug_frame   0x00000000       0x2c strrchr.o
+ .text          0x00000000        0x0 strspn.o
+ .data          0x00000000        0x0 strspn.o
+ .bss           0x00000000        0x0 strspn.o
+ .text.strspn   0x00000000       0x20 strspn.o
+ .debug_info    0x00000000       0xc7 strspn.o
+ .debug_abbrev  0x00000000       0x85 strspn.o
+ .debug_loc     0x00000000       0x95 strspn.o
+ .debug_aranges
+                0x00000000       0x20 strspn.o
+ .debug_ranges  0x00000000       0x10 strspn.o
+ .debug_line    0x00000000       0x57 strspn.o
+ .debug_str     0x00000000      0x19c strspn.o
+ .comment       0x00000000       0x71 strspn.o
+ .ARM.attributes
+                0x00000000       0x33 strspn.o
+ .debug_frame   0x00000000       0x2c strspn.o
+ .text          0x00000000        0x0 strstr.o
+ .data          0x00000000        0x0 strstr.o
+ .bss           0x00000000        0x0 strstr.o
+ .text          0x00000000        0x0 strupr.o
+ .data          0x00000000        0x0 strupr.o
+ .bss           0x00000000        0x0 strupr.o
+ .text.strupr   0x00000000       0x1a strupr.o
+ .debug_info    0x00000000       0xcd strupr.o
+ .debug_abbrev  0x00000000       0x94 strupr.o
+ .debug_loc     0x00000000       0x81 strupr.o
+ .debug_aranges
+                0x00000000       0x20 strupr.o
+ .debug_ranges  0x00000000       0x10 strupr.o
+ .debug_line    0x00000000       0x6e strupr.o
+ .debug_str     0x00000000      0x1a4 strupr.o
+ .comment       0x00000000       0x71 strupr.o
+ .ARM.attributes
+                0x00000000       0x33 strupr.o
+ .debug_frame   0x00000000       0x2c strupr.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00000000         0x00080000         xr
+ram              0x10000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD list.o
+LOAD queue.o
+LOAD tasks.o
+LOAD timers.o
+LOAD port.o
+LOAD heap_1.o
+LOAD lpc17xx.o
+LOAD system_LPC17xx.o
+LOAD main.o
+LOAD uart.o
+LOAD syscalls.o
+LOAD gsm.o
+LOAD boot.o
+LOAD app.o
+LOAD cb.o
+LOAD ctype_.o
+LOAD isalnum.o
+LOAD isalpha.o
+LOAD isascii.o
+LOAD isblank.o
+LOAD iscntrl.o
+LOAD isdigit.o
+LOAD islower.o
+LOAD isprint.o
+LOAD ispunct.o
+LOAD isspace.o
+LOAD isupper.o
+LOAD isxdigit.o
+LOAD toascii.o
+LOAD tolower.o
+LOAD toupper.o
+LOAD fclose.o
+LOAD fflush.o
+LOAD fgetc.o
+LOAD fgetlen.o
+LOAD fgets.o
+LOAD fopen.o
+LOAD fputc.o
+LOAD fputs.o
+LOAD getc.o
+LOAD getchar.o
+LOAD gets.o
+LOAD printf.o
+LOAD putc.o
+LOAD putchar.o
+LOAD puts.o
+LOAD rget.o
+LOAD scanf.o
+LOAD setbuffer.o
+LOAD wbuf.o
+LOAD abs.o
+LOAD assert.o
+LOAD atoi.o
+LOAD atol.o
+LOAD calloc.o
+LOAD div.o
+LOAD exit.o
+LOAD ldiv.o
+LOAD malloc.o
+LOAD rand.o
+LOAD strtol.o
+LOAD bcmp.o
+LOAD bcopy.o
+LOAD bzero.o
+LOAD index.o
+LOAD memccpy.o
+LOAD memchr.o
+LOAD memcmp.o
+LOAD memcpy.o
+LOAD memmove.o
+LOAD mempcpy.o
+LOAD memset.o
+LOAD rindex.o
+LOAD strcat.o
+LOAD strchr.o
+LOAD strcmp.o
+LOAD strcoll.o
+LOAD strcpy.o
+LOAD strcspn.o
+LOAD strlcat.o
+LOAD strlcpy.o
+LOAD strlen.o
+LOAD strlwr.o
+LOAD strncat.o
+LOAD strncmp.o
+LOAD strncpy.o
+LOAD strnlen.o
+LOAD strrchr.o
+LOAD strspn.o
+LOAD strstr.o
+LOAD strupr.o
+                0x00000000                __rom_start__ = ORIGIN (flash)
+                0x00080000                __rom_size__ = 0x80000
+                0x10000000                __ram_start__ = ORIGIN (ram)
+                0x00008000                __ram_size__ = 0x8000
+                0x10008000                __ram_end__ = (__ram_start__ + __ram_size__)
+                0x10008000                __stack_end__ = __ram_end__
+                0x00004000                __stack_size__ = 0x4000
+                0x10004000                __stack_start__ = (__stack_end__ - __stack_size__)
+                0x100004d0                __heap_start__ = __bss_end__
+                0x10004000                __heap_end__ = __stack_start__
+                0x00000000                . = 0x0
+
+.text           0x00000000     0x20c0
+ *(.startup)
+ .startup       0x00000000      0x150 lpc17xx.o
+                0x00000000                _vectors
+                0x000000cc                DebugMon_Handler
+                0x000000cc                RIT_IRQHandler
+                0x000000cc                I2C0_IRQHandler
+                0x000000cc                HardFault_Handler
+                0x000000cc                USBActivity_IRQHandler
+                0x000000cc                PWM1_IRQHandler
+                0x000000cc                NMI_Handler
+                0x000000cc                TIMER2_IRQHandler
+                0x000000cc                I2C1_IRQHandler
+                0x000000cc                EINT2_IRQHandler
+                0x000000cc                EINT3_IRQHandler
+                0x000000cc                CANActivity_IRQHandler
+                0x000000cc                TIMER3_IRQHandler
+                0x000000cc                UsageFault_Handler
+                0x000000cc                PLL0_IRQHandler
+                0x000000cc                CAN_IRQHandler
+                0x000000cc                PLL1_IRQHandler
+                0x000000cc                SSP0_IRQHandler
+                0x000000cc                I2S_IRQHandler
+                0x000000cc                I2C2_IRQHandler
+                0x000000cc                RTC_IRQHandler
+                0x000000cc                TIMER0_IRQHandler
+                0x000000cc                SPI_IRQHandler
+                0x000000cc                EINT1_IRQHandler
+                0x000000cc                TIMER1_IRQHandler
+                0x000000cc                MCPWM_IRQHandler
+                0x000000cc                ADC_IRQHandler
+                0x000000cc                SSP1_IRQHandler
+                0x000000cc                USB_IRQHandler
+                0x000000cc                BOD_IRQHandler
+                0x000000cc                MemManage_Handler
+                0x000000cc                WDT_IRQHandler
+                0x000000cc                QEI_IRQHandler
+                0x000000cc                EINT0_IRQHandler
+                0x000000cc                DMA_IRQHandler
+                0x000000cc                BusFault_Handler
+                0x000000cc                ENET_IRQHandler
+                0x000000ce                _start
+ *(.text*)
+ .text.vListInitialise
+                0x00000150       0x16 list.o
+                0x00000150                vListInitialise
+ .text.vListInitialiseItem
+                0x00000166        0x6 list.o
+                0x00000166                vListInitialiseItem
+ .text.vListInsertEnd
+                0x0000016c       0x1c list.o
+                0x0000016c                vListInsertEnd
+ .text.vListInsert
+                0x00000188       0x30 list.o
+                0x00000188                vListInsert
+ .text.vListRemove
+                0x000001b8       0x24 list.o
+                0x000001b8                vListRemove
+ .text.prvAddCurrentTaskToDelayedList
+                0x000001dc       0x50 tasks.o
+ .text.xTaskGenericCreate
+                0x0000022c      0x18c tasks.o
+                0x0000022c                xTaskGenericCreate
+ .text.vTaskStartScheduler
+                0x000003b8       0x50 tasks.o
+                0x000003b8                vTaskStartScheduler
+ .text.vTaskSuspendAll
+                0x00000408       0x10 tasks.o
+                0x00000408                vTaskSuspendAll
+ .text.vTaskIncrementTick
+                0x00000418       0xcc tasks.o
+                0x00000418                vTaskIncrementTick
+ .text.xTaskResumeAll
+                0x000004e4       0xc0 tasks.o
+                0x000004e4                xTaskResumeAll
+ .text.vTaskDelay
+                0x000005a4       0x3c tasks.o
+                0x000005a4                vTaskDelay
+ .text.prvIdleTask
+                0x000005e0       0x54 tasks.o
+ .text.vTaskSwitchContext
+                0x00000634       0xac tasks.o
+                0x00000634                vTaskSwitchContext
+ .text.pxPortInitialiseStack
+                0x000006e0       0x16 port.o
+                0x000006e0                pxPortInitialiseStack
+ *fill*         0x000006f6        0x2 
+ .text.SVC_Handler
+                0x000006f8       0x20 port.o
+                0x000006f8                SVC_Handler
+ .text.vPortStartFirstTask
+                0x00000718       0x14 port.o
+                0x00000718                vPortStartFirstTask
+ .text.xPortStartScheduler
+                0x0000072c       0x44 port.o
+                0x0000072c                xPortStartScheduler
+ .text.vPortYieldFromISR
+                0x00000770       0x10 port.o
+                0x00000770                vPortYieldFromISR
+ .text.vPortEnterCritical
+                0x00000780       0x18 port.o
+                0x00000780                vPortEnterCritical
+ .text.vPortExitCritical
+                0x00000798       0x18 port.o
+                0x00000798                vPortExitCritical
+ .text.PendSV_Handler
+                0x000007b0       0x3c port.o
+                0x000007b0                PendSV_Handler
+ .text.SysTick_Handler
+                0x000007ec       0x24 port.o
+                0x000007ec                SysTick_Handler
+ .text.pvPortMalloc
+                0x00000810       0x3c heap_1.o
+                0x00000810                pvPortMalloc
+ .text.vPortFree
+                0x0000084c        0x2 heap_1.o
+                0x0000084c                vPortFree
+ *fill*         0x0000084e        0x2 
+ .text.SystemCoreClockUpdate
+                0x00000850       0x9c system_LPC17xx.o
+                0x00000850                SystemCoreClockUpdate
+ .text.SystemInit
+                0x000008ec       0xe0 system_LPC17xx.o
+                0x000008ec                SystemInit
+ .text.prvSetupHardware
+                0x000009cc       0x48 main.o
+                0x000009cc                prvSetupHardware
+ .text.startup.main
+                0x00000a14       0x30 main.o
+                0x00000a14                main
+ .text.uart_getc.part.0
+                0x00000a44       0xb0 uart.o
+ .text.uart_putc.part.1
+                0x00000af4       0x10 uart.o
+ .text.UART0_IRQHandler
+                0x00000b04       0x7c uart.o
+                0x00000b04                UART0_IRQHandler
+ .text.UART1_IRQHandler
+                0x00000b80       0x84 uart.o
+                0x00000b80                UART1_IRQHandler
+ .text.UART2_IRQHandler
+                0x00000c04       0x7c uart.o
+                0x00000c04                UART2_IRQHandler
+ .text.UART3_IRQHandler
+                0x00000c80       0x7c uart.o
+                0x00000c80                UART3_IRQHandler
+ .text.uart_getc
+                0x00000cfc       0x44 uart.o
+                0x00000cfc                uart_getc
+ .text.uart_init
+                0x00000d40      0x174 uart.o
+                0x00000d40                uart_init
+ .text.uart_init_fifo
+                0x00000eb4       0x58 uart.o
+                0x00000eb4                uart_init_fifo
+ .text.uart_putc
+                0x00000f0c       0x48 uart.o
+                0x00000f0c                uart_putc
+ .text.uart_print
+                0x00000f54       0x56 uart.o
+                0x00000f54                uart_print
+ *fill*         0x00000faa        0x2 
+ .text.uart_readline
+                0x00000fac       0xac uart.o
+                0x00000fac                uart_readline
+ .text.gsm_read
+                0x00001058       0x40 gsm.o
+                0x00001058                gsm_read
+ .text.gsm_tokenize
+                0x00001098       0xa8 gsm.o
+                0x00001098                gsm_tokenize
+ .text.gsm_init
+                0x00001140       0x14 gsm.o
+                0x00001140                gsm_init
+ .text.line_trim
+                0x00001154       0x40 gsm.o
+                0x00001154                line_trim
+ .text.gsm_ping_modem
+                0x00001194       0x44 gsm.o
+                0x00001194                gsm_ping_modem
+ .text.gsm_query_netwkregister
+                0x000011d8       0x58 gsm.o
+                0x000011d8                gsm_query_netwkregister
+ .text.gsm_query_rssi
+                0x00001230       0x58 gsm.o
+                0x00001230                gsm_query_rssi
+ .text.gsm_query_gprs
+                0x00001288       0x58 gsm.o
+                0x00001288                gsm_query_gprs
+ .text.gsm_set_apn
+                0x000012e0       0x60 gsm.o
+                0x000012e0                gsm_set_apn
+ .text.gsm_bring_wireless_up
+                0x00001340       0x44 gsm.o
+                0x00001340                gsm_bring_wireless_up
+ .text.gsm_query_ipstatus
+                0x00001384       0x58 gsm.o
+                0x00001384                gsm_query_ipstatus
+ .text.gsm_query_ipaddr
+                0x000013dc       0x58 gsm.o
+                0x000013dc                gsm_query_ipaddr
+ .text.gsm_tcp_shut
+                0x00001434       0x54 gsm.o
+                0x00001434                gsm_tcp_shut
+ .text.sysboot  0x00001488      0x248 boot.o
+                0x00001488                sysboot
+ .text.display_process
+                0x000016d0       0x18 app.o
+                0x000016d0                display_process
+ .text.vApplicationStackOverflowHook
+                0x000016e8        0x2 cb.o
+                0x000016e8                vApplicationStackOverflowHook
+ *fill*         0x000016ea        0x2 
+ .text.vConfigureTimerForRunTimeStats
+                0x000016ec       0x3c cb.o
+                0x000016ec                vConfigureTimerForRunTimeStats
+ .text.isalpha  0x00001728       0x10 isalpha.o
+                0x00001728                isalpha
+ .text.isdigit  0x00001738        0xc isdigit.o
+                0x00001738                isdigit
+ .text.isspace  0x00001744       0x16 isspace.o
+                0x00001744                isspace
+ .text.isupper  0x0000175a        0xc isupper.o
+                0x0000175a                isupper
+ .text.strtol   0x00001766      0x112 strtol.o
+                0x00001766                strtol
+ .text.index    0x00001878        0x4 index.o
+                0x00001878                index
+ .text.memcmp   0x0000187c       0x4a memcmp.o
+                0x0000187c                memcmp
+ .text.memcpy   0x000018c6       0x6a memcpy.o
+                0x000018c6                memcpy
+ .text.memset   0x00001930       0x6c memset.o
+                0x00001930                memset
+ .text.strchr   0x0000199c       0x8a strchr.o
+                0x0000199c                strchr
+ .text.strcpy   0x00001a26       0x38 strcpy.o
+                0x00001a26                strcpy
+ .text.strncpy  0x00001a5e       0x56 strncpy.o
+                0x00001a5e                strncpy
+ .text.strstr   0x00001ab4       0x32 strstr.o
+                0x00001ab4                strstr
+ *(.rodata*)
+ .rodata.str1.1
+                0x00001ae6       0x30 tasks.o
+                                 0x33 (size before relaxing)
+ .rodata.ucExpectedStackBytes.5700
+                0x00001b16       0x14 tasks.o
+ *fill*         0x00001b2a        0x2 
+ .rodata.ulKernelPriority
+                0x00001b2c        0x4 port.o
+                0x00001b2c                ulKernelPriority
+ .rodata.str1.1
+                0x00001b30       0x19 main.o
+ .rodata        0x00001b49        0x3 gsm.o
+ .rodata.str1.1
+                0x00001b4c      0x1dc gsm.o
+                                0x1eb (size before relaxing)
+ .rodata.str1.1
+                0x00001d28      0x223 boot.o
+                                0x226 (size before relaxing)
+ .rodata.str1.1
+                0x00001f4b       0x2b app.o
+ .rodata._ctype_
+                0x00001f76      0x101 ctype_.o
+                0x00001f76                _ctype_
+ .rodata.str1.1
+                0x00002077        0x7 printf.o
+ .rodata.str1.1
+                0x0000207e       0x3c assert.o
+                                 0x3d (size before relaxing)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+                0x000020bc                . = ALIGN (0x4)
+ *fill*         0x000020ba        0x2 
+                0x000020bc                __ctors_start__ = .
+ *(.init_array)
+ *(.ctors)
+                0x000020bc                __ctors_end__ = .
+                0x000020c0                . = ALIGN (0x10)
+ *fill*         0x000020bc        0x4 
+                0x000020c0                __text_end__ = .
+
+.vfp11_veneer   0x000020c0        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000020c0        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000020c0        0x0
+ .iplt          0x00000000        0x0 list.o
+
+.rel.dyn        0x000020c0        0x0
+ .rel.iplt      0x00000000        0x0 list.o
+
+.data           0x10000000        0x0 load address 0x000020c0
+                0x10000000                __data_beg__ = .
+ *(.data)
+                0x10000000                __data_end__ = .
+
+.igot.plt       0x10000000        0x0 load address 0x000020c0
+ .igot.plt      0x00000000        0x0 list.o
+
+.data.xNextTaskUnblockTime
+                0x10000000        0x4 load address 0x000020c0
+ .data.xNextTaskUnblockTime
+                0x10000000        0x4 tasks.o
+
+.data.uxCriticalNesting
+                0x10000004        0x4 load address 0x000020c4
+ .data.uxCriticalNesting
+                0x10000004        0x4 port.o
+
+.data.SystemCoreClock
+                0x10000008        0x4 load address 0x000020c8
+ .data.SystemCoreClock
+                0x10000008        0x4 system_LPC17xx.o
+                0x10000008                SystemCoreClock
+
+.data.apn_list  0x1000000c       0x20 load address 0x000020cc
+ .data.apn_list
+                0x1000000c       0x20 gsm.o
+                0x1000000c                apn_list
+
+.bss            0x10000030      0x4a0 load address 0x000020f0
+                0x10000030                __bss_beg__ = .
+ *(.bss)
+ *(COMMON)
+ COMMON         0x10000030       0x70 uart.o
+                0x10000030                uart0
+                0x1000004c                uart1
+                0x10000068                uart3
+                0x10000084                uart2
+ COMMON         0x100000a0      0x430 gsm.o
+                0x100000a0                gprs
+                0x100000b8                gsm
+                0x100004b4                network
+                0x100004c4                http
+                0x100004d0                __bss_end__ = .
+
+.bss.xPendingReadyList
+                0x100004d0       0x14 load address 0x000020ec
+ .bss.xPendingReadyList
+                0x100004d0       0x14 tasks.o
+
+.bss.uxTopReadyPriority
+                0x100004e4        0x4 load address 0x000020ec
+ .bss.uxTopReadyPriority
+                0x100004e4        0x4 tasks.o
+
+.bss.uxTasksDeleted
+                0x100004e8        0x4 load address 0x000020ec
+ .bss.uxTasksDeleted
+                0x100004e8        0x4 tasks.o
+
+.bss.xTickCount
+                0x100004ec        0x4 load address 0x000020ec
+ .bss.xTickCount
+                0x100004ec        0x4 tasks.o
+
+.bss.pxReadyTasksLists
+                0x100004f0       0x64 load address 0x000020ec
+ .bss.pxReadyTasksLists
+                0x100004f0       0x64 tasks.o
+
+.bss.pxOverflowDelayedTaskList
+                0x10000554        0x4 load address 0x000020ec
+ .bss.pxOverflowDelayedTaskList
+                0x10000554        0x4 tasks.o
+
+.bss.uxTCBNumber
+                0x10000558        0x4 load address 0x000020ec
+ .bss.uxTCBNumber
+                0x10000558        0x4 tasks.o
+
+.bss.pxDelayedTaskList
+                0x1000055c        0x4 load address 0x000020ec
+ .bss.pxDelayedTaskList
+                0x1000055c        0x4 tasks.o
+
+.bss.uxCurrentNumberOfTasks
+                0x10000560        0x4 load address 0x000020ec
+ .bss.uxCurrentNumberOfTasks
+                0x10000560        0x4 tasks.o
+
+.bss.xSchedulerRunning
+                0x10000564        0x4 load address 0x000020ec
+ .bss.xSchedulerRunning
+                0x10000564        0x4 tasks.o
+
+.bss.ulTaskSwitchedInTime
+                0x10000568        0x4 load address 0x000020ec
+ .bss.ulTaskSwitchedInTime
+                0x10000568        0x4 tasks.o
+
+.bss.xMissedYield
+                0x1000056c        0x4 load address 0x000020ec
+ .bss.xMissedYield
+                0x1000056c        0x4 tasks.o
+
+.bss.pxCurrentTCB
+                0x10000570        0x4 load address 0x000020ec
+ .bss.pxCurrentTCB
+                0x10000570        0x4 tasks.o
+                0x10000570                pxCurrentTCB
+
+.bss.xSuspendedTaskList
+                0x10000574       0x14 load address 0x000020ec
+ .bss.xSuspendedTaskList
+                0x10000574       0x14 tasks.o
+
+.bss.xDelayedTaskList1
+                0x10000588       0x14 load address 0x000020ec
+ .bss.xDelayedTaskList1
+                0x10000588       0x14 tasks.o
+
+.bss.xDelayedTaskList2
+                0x1000059c       0x14 load address 0x000020ec
+ .bss.xDelayedTaskList2
+                0x1000059c       0x14 tasks.o
+
+.bss.xTasksWaitingTermination
+                0x100005b0       0x14 load address 0x000020ec
+ .bss.xTasksWaitingTermination
+                0x100005b0       0x14 tasks.o
+
+.bss.uxSchedulerSuspended
+                0x100005c4        0x4 load address 0x000020ec
+ .bss.uxSchedulerSuspended
+                0x100005c4        0x4 tasks.o
+
+.bss.uxMissedTicks
+                0x100005c8        0x4 load address 0x000020ec
+ .bss.uxMissedTicks
+                0x100005c8        0x4 tasks.o
+
+.bss.xNumOfOverflows
+                0x100005cc        0x4 load address 0x000020ec
+ .bss.xNumOfOverflows
+                0x100005cc        0x4 tasks.o
+
+.bss.uxTopUsedPriority
+                0x100005d0        0x4 load address 0x000020ec
+ .bss.uxTopUsedPriority
+                0x100005d0        0x4 tasks.o
+
+.bss.xNextFreeByte
+                0x100005d4        0x4 load address 0x000020ec
+ .bss.xNextFreeByte
+                0x100005d4        0x4 heap_1.o
+
+.bss.xHeap      0x100005d8     0x4c00 load address 0x000020ec
+ .bss.xHeap     0x100005d8     0x4c00 heap_1.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x100051d8                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x100051d8                __exidx_end = .
+                0xefff7b30                VectorChecksum = - ((((((((__stack_end__ + _start) + NMI_Handler) + HardFault_Handler) + MemManage_Handler) + BusFault_Handler) + UsageFault_Handler) + 0x6))
+OUTPUT(app.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x7ad6
+ .debug_info    0x00000000      0x2c8 list.o
+ .debug_info    0x000002c8     0x1bcf tasks.o
+ .debug_info    0x00001e97      0x244 port.o
+ .debug_info    0x000020db      0x1b7 heap_1.o
+ .debug_info    0x00002292       0x66 lpc17xx.o
+ .debug_info    0x000022f8      0x38f system_LPC17xx.o
+ .debug_info    0x00002687      0x34e main.o
+ .debug_info    0x000029d5     0x14be uart.o
+ .debug_info    0x00003e93     0x194a gsm.o
+ .debug_info    0x000057dd      0x776 boot.o
+ .debug_info    0x00005f53      0x1f9 app.o
+ .debug_info    0x0000614c      0x52c cb.o
+ .debug_info    0x00006678       0x6c ctype_.o
+ .debug_info    0x000066e4       0x5c isalpha.o
+ .debug_info    0x00006740       0x5c isdigit.o
+ .debug_info    0x0000679c       0x5c isspace.o
+ .debug_info    0x000067f8       0x5c isupper.o
+ .debug_info    0x00006854      0x677 printf.o
+ .debug_info    0x00006ecb      0x212 assert.o
+ .debug_info    0x000070dd      0x1e7 strtol.o
+ .debug_info    0x000072c4       0xe4 index.o
+ .debug_info    0x000073a8       0xfc memcmp.o
+ .debug_info    0x000074a4      0x130 memcpy.o
+ .debug_info    0x000075d4      0x108 memset.o
+ .debug_info    0x000076dc      0x111 strchr.o
+ .debug_info    0x000077ed      0x109 strcpy.o
+ .debug_info    0x000078f6      0x118 strncpy.o
+ .debug_info    0x00007a0e       0xc8 strstr.o
+
+.debug_abbrev   0x00000000     0x1d74
+ .debug_abbrev  0x00000000       0xe0 list.o
+ .debug_abbrev  0x000000e0      0x3ff tasks.o
+ .debug_abbrev  0x000004df      0x169 port.o
+ .debug_abbrev  0x00000648      0x159 heap_1.o
+ .debug_abbrev  0x000007a1       0x14 lpc17xx.o
+ .debug_abbrev  0x000007b5       0xd6 system_LPC17xx.o
+ .debug_abbrev  0x0000088b      0x148 main.o
+ .debug_abbrev  0x000009d3      0x36f uart.o
+ .debug_abbrev  0x00000d42      0x2ee gsm.o
+ .debug_abbrev  0x00001030      0x16b boot.o
+ .debug_abbrev  0x0000119b       0xd9 app.o
+ .debug_abbrev  0x00001274      0x124 cb.o
+ .debug_abbrev  0x00001398       0x4e ctype_.o
+ .debug_abbrev  0x000013e6       0x4c isalpha.o
+ .debug_abbrev  0x00001432       0x4c isdigit.o
+ .debug_abbrev  0x0000147e       0x4c isspace.o
+ .debug_abbrev  0x000014ca       0x4c isupper.o
+ .debug_abbrev  0x00001516      0x20a printf.o
+ .debug_abbrev  0x00001720       0xe2 assert.o
+ .debug_abbrev  0x00001802       0xe7 strtol.o
+ .debug_abbrev  0x000018e9       0x9b index.o
+ .debug_abbrev  0x00001984       0x74 memcmp.o
+ .debug_abbrev  0x000019f8       0xa0 memcpy.o
+ .debug_abbrev  0x00001a98       0xa3 memset.o
+ .debug_abbrev  0x00001b3b       0x85 strchr.o
+ .debug_abbrev  0x00001bc0       0x94 strcpy.o
+ .debug_abbrev  0x00001c54       0x94 strncpy.o
+ .debug_abbrev  0x00001ce8       0x8c strstr.o
+
+.debug_loc      0x00000000     0x42a0
+ .debug_loc     0x00000000       0x70 list.o
+ .debug_loc     0x00000070     0x1070 tasks.o
+ .debug_loc     0x000010e0       0x92 port.o
+ .debug_loc     0x00001172       0xc2 heap_1.o
+ .debug_loc     0x00001234       0x20 system_LPC17xx.o
+ .debug_loc     0x00001254       0x40 main.o
+ .debug_loc     0x00001294      0xdf9 uart.o
+ .debug_loc     0x0000208d      0xa5d gsm.o
+ .debug_loc     0x00002aea       0x4d boot.o
+ .debug_loc     0x00002b37       0xc3 app.o
+ .debug_loc     0x00002bfa       0x21 isalpha.o
+ .debug_loc     0x00002c1b       0x2e isdigit.o
+ .debug_loc     0x00002c49       0x38 isspace.o
+ .debug_loc     0x00002c81       0x2f isupper.o
+ .debug_loc     0x00002cb0      0x86d printf.o
+ .debug_loc     0x0000351d      0x146 assert.o
+ .debug_loc     0x00003663      0x2b6 strtol.o
+ .debug_loc     0x00003919       0x42 index.o
+ .debug_loc     0x0000395b      0x127 memcmp.o
+ .debug_loc     0x00003a82      0x254 memcpy.o
+ .debug_loc     0x00003cd6      0x1a3 memset.o
+ .debug_loc     0x00003e79      0x150 strchr.o
+ .debug_loc     0x00003fc9      0x118 strcpy.o
+ .debug_loc     0x000040e1      0x155 strncpy.o
+ .debug_loc     0x00004236       0x6a strstr.o
+
+.debug_aranges  0x00000000      0x678
+ .debug_aranges
+                0x00000000       0x40 list.o
+ .debug_aranges
+                0x00000040      0x118 tasks.o
+ .debug_aranges
+                0x00000158       0x68 port.o
+ .debug_aranges
+                0x000001c0       0x38 heap_1.o
+ .debug_aranges
+                0x000001f8       0x20 lpc17xx.o
+ .debug_aranges
+                0x00000218       0x28 system_LPC17xx.o
+ .debug_aranges
+                0x00000240       0x28 main.o
+ .debug_aranges
+                0x00000268       0x80 uart.o
+ .debug_aranges
+                0x000002e8       0xe0 gsm.o
+ .debug_aranges
+                0x000003c8       0x20 boot.o
+ .debug_aranges
+                0x000003e8       0x30 app.o
+ .debug_aranges
+                0x00000418       0x30 cb.o
+ .debug_aranges
+                0x00000448       0x18 ctype_.o
+ .debug_aranges
+                0x00000460       0x20 isalpha.o
+ .debug_aranges
+                0x00000480       0x20 isdigit.o
+ .debug_aranges
+                0x000004a0       0x20 isspace.o
+ .debug_aranges
+                0x000004c0       0x20 isupper.o
+ .debug_aranges
+                0x000004e0       0x50 printf.o
+ .debug_aranges
+                0x00000530       0x28 assert.o
+ .debug_aranges
+                0x00000558       0x20 strtol.o
+ .debug_aranges
+                0x00000578       0x20 index.o
+ .debug_aranges
+                0x00000598       0x20 memcmp.o
+ .debug_aranges
+                0x000005b8       0x20 memcpy.o
+ .debug_aranges
+                0x000005d8       0x20 memset.o
+ .debug_aranges
+                0x000005f8       0x20 strchr.o
+ .debug_aranges
+                0x00000618       0x20 strcpy.o
+ .debug_aranges
+                0x00000638       0x20 strncpy.o
+ .debug_aranges
+                0x00000658       0x20 strstr.o
+
+.debug_ranges   0x00000000      0x5a0
+ .debug_ranges  0x00000000       0x30 list.o
+ .debug_ranges  0x00000030      0x190 tasks.o
+ .debug_ranges  0x000001c0       0x70 port.o
+ .debug_ranges  0x00000230       0x28 heap_1.o
+ .debug_ranges  0x00000258       0x18 system_LPC17xx.o
+ .debug_ranges  0x00000270       0x18 main.o
+ .debug_ranges  0x00000288       0x88 uart.o
+ .debug_ranges  0x00000310       0xe8 gsm.o
+ .debug_ranges  0x000003f8       0x10 boot.o
+ .debug_ranges  0x00000408       0x20 app.o
+ .debug_ranges  0x00000428       0x20 cb.o
+ .debug_ranges  0x00000448       0x10 isalpha.o
+ .debug_ranges  0x00000458       0x10 isdigit.o
+ .debug_ranges  0x00000468       0x10 isspace.o
+ .debug_ranges  0x00000478       0x10 isupper.o
+ .debug_ranges  0x00000488       0x58 printf.o
+ .debug_ranges  0x000004e0       0x18 assert.o
+ .debug_ranges  0x000004f8       0x10 strtol.o
+ .debug_ranges  0x00000508       0x10 index.o
+ .debug_ranges  0x00000518       0x10 memcmp.o
+ .debug_ranges  0x00000528       0x10 memcpy.o
+ .debug_ranges  0x00000538       0x10 memset.o
+ .debug_ranges  0x00000548       0x10 strchr.o
+ .debug_ranges  0x00000558       0x10 strcpy.o
+ .debug_ranges  0x00000568       0x10 strncpy.o
+ .debug_ranges  0x00000578       0x28 strstr.o
+
+.debug_line     0x00000000     0x214c
+ .debug_line    0x00000000      0x122 list.o
+ .debug_line    0x00000122      0x5f6 tasks.o
+ .debug_line    0x00000718      0x1ce port.o
+ .debug_line    0x000008e6       0xe5 heap_1.o
+ .debug_line    0x000009cb       0x62 lpc17xx.o
+ .debug_line    0x00000a2d      0x15a system_LPC17xx.o
+ .debug_line    0x00000b87      0x143 main.o
+ .debug_line    0x00000cca      0x443 uart.o
+ .debug_line    0x0000110d      0x48d gsm.o
+ .debug_line    0x0000159a      0x167 boot.o
+ .debug_line    0x00001701      0x155 app.o
+ .debug_line    0x00001856      0x11b cb.o
+ .debug_line    0x00001971       0x37 ctype_.o
+ .debug_line    0x000019a8       0x49 isalpha.o
+ .debug_line    0x000019f1       0x49 isdigit.o
+ .debug_line    0x00001a3a       0x51 isspace.o
+ .debug_line    0x00001a8b       0x49 isupper.o
+ .debug_line    0x00001ad4      0x1c4 printf.o
+ .debug_line    0x00001c98       0x7c assert.o
+ .debug_line    0x00001d14       0xbe strtol.o
+ .debug_line    0x00001dd2       0x63 index.o
+ .debug_line    0x00001e35       0x72 memcmp.o
+ .debug_line    0x00001ea7       0x7c memcpy.o
+ .debug_line    0x00001f23       0x72 memset.o
+ .debug_line    0x00001f95       0x81 strchr.o
+ .debug_line    0x00002016       0x68 strcpy.o
+ .debug_line    0x0000207e       0x77 strncpy.o
+ .debug_line    0x000020f5       0x57 strstr.o
+
+.debug_str      0x00000000     0x1a39
+ .debug_str     0x00000000      0x2b8 list.o
+                                0x2f2 (size before relaxing)
+ .debug_str     0x000002b8      0x92a tasks.o
+                                0xbed (size before relaxing)
+ .debug_str     0x00000be2       0xab port.o
+                                0x312 (size before relaxing)
+ .debug_str     0x00000c8d       0x95 heap_1.o
+                                0x27e (size before relaxing)
+ .debug_str     0x00000d22      0x17f system_LPC17xx.o
+                                0x362 (size before relaxing)
+ .debug_str     0x00000ea1       0x58 main.o
+                                0x2dc (size before relaxing)
+ .debug_str     0x00000ef9      0x4fa uart.o
+                                0x880 (size before relaxing)
+ .debug_str     0x000013f3      0x2b3 gsm.o
+                                0x5ab (size before relaxing)
+ .debug_str     0x000016a6       0x13 boot.o
+                                0x343 (size before relaxing)
+ .debug_str     0x000016b9       0x3a app.o
+                                0x23c (size before relaxing)
+ .debug_str     0x000016f3       0x66 cb.o
+                                0x3f4 (size before relaxing)
+ .debug_str     0x00001759       0x2d ctype_.o
+                                0x14a (size before relaxing)
+ .debug_str     0x00001786       0x20 isalpha.o
+                                0x12f (size before relaxing)
+ .debug_str     0x000017a6       0x20 isdigit.o
+                                0x12f (size before relaxing)
+ .debug_str     0x000017c6       0x20 isspace.o
+                                0x12f (size before relaxing)
+ .debug_str     0x000017e6       0x20 isupper.o
+                                0x12f (size before relaxing)
+ .debug_str     0x00001806       0xa4 printf.o
+                                0x24a (size before relaxing)
+ .debug_str     0x000018aa       0x46 assert.o
+                                0x20d (size before relaxing)
+ .debug_str     0x000018f0       0x2b strtol.o
+                                0x1ef (size before relaxing)
+ .debug_str     0x0000191b       0x1e index.o
+                                0x1a1 (size before relaxing)
+ .debug_str     0x00001939       0x18 memcmp.o
+                                0x1a9 (size before relaxing)
+ .debug_str     0x00001951       0x3f memcpy.o
+                                0x1cc (size before relaxing)
+ .debug_str     0x00001990       0x2c memset.o
+                                0x1c2 (size before relaxing)
+ .debug_str     0x000019bc       0x1d strchr.o
+                                0x1c0 (size before relaxing)
+ .debug_str     0x000019d9       0x18 strcpy.o
+                                0x1c7 (size before relaxing)
+ .debug_str     0x000019f1       0x1f strncpy.o
+                                0x1cf (size before relaxing)
+ .debug_str     0x00001a10       0x29 strstr.o
+                                0x1ad (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 list.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 tasks.o
+ .comment       0x00000000       0x71 port.o
+ .comment       0x00000000       0x71 heap_1.o
+ .comment       0x00000000       0x71 system_LPC17xx.o
+ .comment       0x00000000       0x71 main.o
+ .comment       0x00000000       0x71 uart.o
+ .comment       0x00000000       0x71 gsm.o
+ .comment       0x00000000       0x71 boot.o
+ .comment       0x00000000       0x71 app.o
+ .comment       0x00000000       0x71 cb.o
+ .comment       0x00000000       0x71 ctype_.o
+ .comment       0x00000000       0x71 isalpha.o
+ .comment       0x00000000       0x71 isdigit.o
+ .comment       0x00000000       0x71 isspace.o
+ .comment       0x00000000       0x71 isupper.o
+ .comment       0x00000000       0x71 printf.o
+ .comment       0x00000000       0x71 assert.o
+ .comment       0x00000000       0x71 strtol.o
+ .comment       0x00000000       0x71 index.o
+ .comment       0x00000000       0x71 memcmp.o
+ .comment       0x00000000       0x71 memcpy.o
+ .comment       0x00000000       0x71 memset.o
+ .comment       0x00000000       0x71 strchr.o
+ .comment       0x00000000       0x71 strcpy.o
+ .comment       0x00000000       0x71 strncpy.o
+ .comment       0x00000000       0x71 strstr.o
+
+.ARM.attributes
+                0x00000000       0x31
+ .ARM.attributes
+                0x00000000       0x33 list.o
+ .ARM.attributes
+                0x00000033       0x33 tasks.o
+ .ARM.attributes
+                0x00000066       0x33 port.o
+ .ARM.attributes
+                0x00000099       0x33 heap_1.o
+ .ARM.attributes
+                0x000000cc       0x21 lpc17xx.o
+ .ARM.attributes
+                0x000000ed       0x33 system_LPC17xx.o
+ .ARM.attributes
+                0x00000120       0x33 main.o
+ .ARM.attributes
+                0x00000153       0x33 uart.o
+ .ARM.attributes
+                0x00000186       0x33 gsm.o
+ .ARM.attributes
+                0x000001b9       0x33 boot.o
+ .ARM.attributes
+                0x000001ec       0x33 app.o
+ .ARM.attributes
+                0x0000021f       0x33 cb.o
+ .ARM.attributes
+                0x00000252       0x33 ctype_.o
+ .ARM.attributes
+                0x00000285       0x33 isalpha.o
+ .ARM.attributes
+                0x000002b8       0x33 isdigit.o
+ .ARM.attributes
+                0x000002eb       0x33 isspace.o
+ .ARM.attributes
+                0x0000031e       0x33 isupper.o
+ .ARM.attributes
+                0x00000351       0x33 printf.o
+ .ARM.attributes
+                0x00000384       0x33 assert.o
+ .ARM.attributes
+                0x000003b7       0x33 strtol.o
+ .ARM.attributes
+                0x000003ea       0x33 index.o
+ .ARM.attributes
+                0x0000041d       0x33 memcmp.o
+ .ARM.attributes
+                0x00000450       0x33 memcpy.o
+ .ARM.attributes
+                0x00000483       0x33 memset.o
+ .ARM.attributes
+                0x000004b6       0x33 strchr.o
+ .ARM.attributes
+                0x000004e9       0x33 strcpy.o
+ .ARM.attributes
+                0x0000051c       0x33 strncpy.o
+ .ARM.attributes
+                0x0000054f       0x33 strstr.o
+
+.debug_frame    0x00000000      0xd8c
+ .debug_frame   0x00000000       0x68 list.o
+ .debug_frame   0x00000068      0x340 tasks.o
+ .debug_frame   0x000003a8       0xc0 port.o
+ .debug_frame   0x00000468       0x5c heap_1.o
+ .debug_frame   0x000004c4       0x38 system_LPC17xx.o
+ .debug_frame   0x000004fc       0x48 main.o
+ .debug_frame   0x00000544      0x124 uart.o
+ .debug_frame   0x00000668      0x2f4 gsm.o
+ .debug_frame   0x0000095c       0x2c boot.o
+ .debug_frame   0x00000988       0x58 app.o
+ .debug_frame   0x000009e0       0x40 cb.o
+ .debug_frame   0x00000a20       0x20 isalpha.o
+ .debug_frame   0x00000a40       0x20 isdigit.o
+ .debug_frame   0x00000a60       0x20 isspace.o
+ .debug_frame   0x00000a80       0x20 isupper.o
+ .debug_frame   0x00000aa0      0x110 printf.o
+ .debug_frame   0x00000bb0       0x48 assert.o
+ .debug_frame   0x00000bf8       0x3c strtol.o
+ .debug_frame   0x00000c34       0x20 index.o
+ .debug_frame   0x00000c54       0x2c memcmp.o
+ .debug_frame   0x00000c80       0x2c memcpy.o
+ .debug_frame   0x00000cac       0x30 memset.o
+ .debug_frame   0x00000cdc       0x2c strchr.o
+ .debug_frame   0x00000d08       0x2c strcpy.o
+ .debug_frame   0x00000d34       0x2c strncpy.o
+ .debug_frame   0x00000d60       0x2c strstr.o

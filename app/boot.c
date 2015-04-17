@@ -136,21 +136,21 @@ void sysboot(void * pvParameters)
 	debug_out("creating tasks\r\n");
 	xTaskCreate(display_process,
 			(signed portCHAR *)"display",
-			128,
+			configMINIMAL_STACK_SIZE,
 			NULL,
 			tskIDLE_PRIORITY,
 			NULL);
 
 	xTaskCreate(display_process,
 			(signed portCHAR *)"display",
-			128,
+			configMINIMAL_STACK_SIZE,
 			NULL,
 			tskIDLE_PRIORITY,
 			NULL);
 
 	xTaskCreate(display_process,
 			(signed portCHAR *)"display",
-			128,
+			configMINIMAL_STACK_SIZE,
 			NULL,
 			tskIDLE_PRIORITY,
 			NULL);
